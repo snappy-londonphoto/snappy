@@ -30,7 +30,7 @@
         padding: 50px 20px;
         text-align: center;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 100%; /* 横幅100%に設定 */
+        width: 100%;
         box-sizing: border-box;
       }
 
@@ -54,17 +54,17 @@
         width: 100%;
         position: relative;
         overflow: hidden;
-        margin: 0 auto; /* 中央に配置 */
-        padding: 0; /* 余分なパディングがないか確認 */
-        box-sizing: border-box; /* パディングやボーダーを幅に含める */
+        margin: 0 auto;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       /* 各スライド画像 */
       .mySlides img {
-        width: 100%;  /* 画像の幅を親要素に合わせる */
-        height: auto; /* 高さは自動で調整 */
-        max-width: 100%; /* 画像がはみ出さないように */
-        display: block; /* 余分な隙間をなくす */
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        display: block;
       }
 
       /* ボタンの基本スタイル */
@@ -72,19 +72,20 @@
         background-color: #B2AB9F;
         color: white;
         padding: 20px;
-        border-radius: 50%; /* 正円 */
+        border-radius: 0; /* 正円ではなくシンプルな長方形 */
         text-align: center;
         text-decoration: none;
-        font-size: 16px; /* フォントサイズ調整 */
+        font-size: 20px; /* フォントサイズ調整 */
         font-weight: bold;
         border: 2px solid #cccccc;
-        display: inline-block;
+        display: block;
         transition: all 0.3s ease;
-        margin: 15px 10px;
-        width: 70px; /* ボタンの横幅 */
-        height: 70px; /* ボタンの高さ */
-        line-height: 70px; /* ボタン内の文字を中央に配置 */
-        text-align: center; /* ボタン内のテキストを中央揃え */
+        margin: 15px 0;
+        width: 250px; /* ボタンの横幅統一 */
+        height: 60px; /* ボタンの高さ */
+        line-height: 60px; /* ボタン内の文字を中央に配置 */
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .button:hover {
@@ -94,16 +95,15 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
-      /* ボタンの横並びと中央配置 */
+      /* ボタンを縦一列に並べる */
       .contact-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
+        display: block;
         margin-top: 20px;
+        text-align: center;
       }
 
       .contact-links .button {
-        margin-right: 15px;
+        margin-bottom: 20px; /* ボタン間の余白 */
       }
 
       /* セクションの非表示 */
@@ -131,24 +131,16 @@
         line-height: 1.6;
         max-width: 320px;
         margin: 0 auto;
-        text-align: left; /* Planと同じように左揃え */
+        text-align: left;
       }
 
       /* レスポンシブ対応 */
       @media only screen and (max-width: 768px) {
-        .slideshow-container {
-          width: 100%;
-        }
-
-        .mySlides img {
-          width: 100%;  /* モバイルでも画像が横にスクロールしないように */
-        }
-
         .button {
-          width: 60px;
-          height: 60px;
-          line-height: 60px; /* ボタン内の文字を中央に */
-          font-size: 14px; /* モバイル用にフォントサイズを調整 */
+          width: 200px;
+          height: 50px;
+          line-height: 50px;
+          font-size: 16px; /* モバイル用にフォントサイズを調整 */
         }
       }
     </style>
