@@ -2,230 +2,210 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>London Photography</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Snappy Film</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="textflow.css">
     <link rel="stylesheet" href="loading.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
-      /* 全体の背景色とテキスト色 */
+      /* 全体のスタイル */
       body {
-        background-color: #EBE8E2;
-        color: #333333;
-        font-family: 'Cormorant Garamond', serif;
         margin: 0;
-        padding: 0;
-        text-align: center;
-        box-sizing: border-box;
+        font-family: 'Cormorant Garamond', serif;
+        color: #333;
+        background-color: #f2f2f2;
+        overflow-x: hidden;
       }
 
-      /* 日本語フォントの指定 */
-      p, li, h1, h3 {
+      h1, h3 {
         font-family: 'Noto Serif Japanese', serif;
       }
 
-      /* ヘッダー部分 */
-      .header {
-        background-color: #D2C9BE;
-        padding: 50px 20px;
-        text-align: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      /* ヘッダー */
+      header {
+        position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
-        box-sizing: border-box;
+        background-color: #D2C9BE;
+        padding: 20px 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
 
-      .header h1 {
+      header .logo {
+        text-align: center;
+        color: #333;
         font-size: 48px;
         font-weight: bold;
-        color: #333333;
         letter-spacing: 1px;
-        margin: 0;
+        text-transform: uppercase;
       }
 
-      .header p {
+      header .location {
+        text-align: center;
+        color: #888;
         font-size: 18px;
-        color: #888888;
-        margin-top: 10px;
-        margin-bottom: 0;
+        margin-top: 5px;
       }
 
-      /* スライドショーの親要素 */
+      /* メニュー */
+      nav {
+        text-align: center;
+        margin-top: 40px;
+      }
+
+      nav a {
+        text-decoration: none;
+        color: #333;
+        font-size: 16px;
+        margin: 0 20px;
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #B2AB9F;
+      }
+
+      /* スライドショー */
       .slideshow-container {
         width: 100%;
         position: relative;
         overflow: hidden;
-        margin: 0 auto;
-        padding: 0;
-        box-sizing: border-box;
+        margin-top: 100px;
       }
 
-      /* 各スライド画像 */
+      .mySlides {
+        display: none;
+      }
+
       .mySlides img {
         width: 100%;
         height: auto;
-        max-width: 100%;
-        display: block;
       }
 
-      /* ボタンの基本スタイル */
+      /* ボタン */
       .button {
         background-color: #B2AB9F;
         color: white;
-        padding: 20px;
+        padding: 15px 25px;
         border-radius: 5px;
-        text-align: center;
         text-decoration: none;
-        font-size: 20px; /* フォントサイズ調整 */
+        font-size: 18px;
+        text-transform: uppercase;
         font-weight: bold;
-        border: 2px solid #cccccc;
-        display: block;
-        transition: all 0.3s ease;
-        margin: 10px 5px;
-        width: calc(100% / 3 - 20px); /* ボタンを横一列に3つ並べる */
-        height: 60px; /* ボタンの高さ */
-        line-height: 60px; /* ボタン内の文字を中央に配置 */
+        display: inline-block;
+        transition: background-color 0.3s;
       }
 
       .button:hover {
         background-color: #696156;
-        color: white;
-        border: 2px solid #696156;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
-      /* ボタンを横一列に並べる */
-      .contact-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 20px;
+      /* セクション */
+      .content {
+        padding: 50px 20px;
+        text-align: center;
       }
 
-      /* セクションの非表示 */
-      .plan-content, .about-me-content, .contact-content {
-        display: none;
-        margin-top: 20px;
-        text-align: left;
+      .content h3 {
+        font-size: 36px;
+        margin-bottom: 30px;
+        color: #333;
+      }
+
+      .content p {
         font-size: 18px;
-        color: #333333;
-        max-width: 900px;
-        margin: 20px auto;
-      }
-
-      /* プロフィール画像のスタイル */
-      .profile-img {
-        width: 100%;
-        max-width: 300px;
-        border-radius: 50%;
-        margin-top: 20px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-      }
-
-      /* About Me のテキスト調整 */
-      .about-me-content p {
         line-height: 1.6;
-        max-width: 320px;
+        max-width: 900px;
         margin: 0 auto;
-        text-align: left;
+        color: #555;
       }
 
-      /* 背景画像を追加 */
-      .background-image {
-        background-image: url('background-image.jpg');
-        background-size: cover;
-        background-position: center;
-        height: 100vh;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
+      .content a {
+        color: #B2AB9F;
+        font-weight: bold;
       }
 
-      /* レスポンシブ対応 */
-      @media only screen and (max-width: 768px) {
-        .button {
-          width: calc(100% - 20px); /* モバイル用にボタンを全幅に調整 */
-          height: 50px;
-          line-height: 50px;
-          font-size: 16px;
+      /* レスポンシブデザイン */
+      @media (max-width: 768px) {
+        header .logo {
+          font-size: 36px;
+        }
+
+        nav a {
+          font-size: 14px;
         }
       }
     </style>
   </head>
 
   <body>
-    <!-- 背景画像 -->
-    <div class="background-image"></div>
+    <!-- ヘッダー -->
+    <header>
+      <div class="logo">Snappy Film</div>
+      <div class="location">Based in London</div>
+    </header>
 
-    <div class="header">
-      <h1>London Photography</h1>
-      <p>Capturing special moments in London and across Europe</p>
-    </div>
+    <!-- ナビゲーションメニュー -->
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about-me">About Me</a>
+      <a href="#plan">Plan</a>
+      <a href="#photo">Photo</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
+    <!-- スライドショー -->
     <div class="slideshow-container">
-      <div class="mySlides">
-        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben2.jpeg?raw=true" alt="Big Ben">
+      <div class="mySlides fade">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben2.jpeg?raw=true" alt="Big Ben 1">
       </div>
-
-      <div class="mySlides">
-        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben1.jpeg?raw=true" alt="Big Ben">
+      <div class="mySlides fade">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben1.jpeg?raw=true" alt="Big Ben 2">
       </div>
-
-      <div class="mySlides">
-        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben.flower1.jpeg?raw=true" alt="Big Ben with Flowers">
+      <div class="mySlides fade">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben.flower1.jpeg?raw=true" alt="Big Ben with flowers">
       </div>
     </div>
 
-    <div class="contact-links">
-      <a href="javascript:void(0);" class="button" onclick="toggleSection('plan')">Plan</a>
-      <a href="javascript:void(0);" class="button" onclick="toggleSection('about-me')">About Me</a>
-      <a href="javascript:void(0);" class="button" onclick="toggleSection('contact')">Contact</a>
-      <a href="photo.html" class="button">Photo</a>
-      <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="button">Instagram</a>
-    </div>
-
-    <!-- Plan セクション -->
-    <div id="plan" class="plan-content">
-      <h3>Plan / プラン</h3>
-      <ul>
-        <li>所要時間：約30分</li>
-        <li>納品枚数：10枚〜</li>
-        <li>料金：£30</li>
-      </ul>
+    <!-- Home セクション -->
+    <div id="home" class="content">
+      <h3>Welcome to Snappy Film</h3>
+      <p>Capturing special moments in London and across Europe. For bookings and inquiries, please feel free to contact me.</p>
     </div>
 
     <!-- About Me セクション -->
-    <div id="about-me" class="about-me-content">
+    <div id="about-me" class="content">
       <h3>About Me</h3>
-      <p>ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。一人ひとりの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
-      <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+      <p>Hello, I’m Mako, a London-based photographer. I specialize in capturing special moments across London and Europe. I started my photography journey in January 2024 and have been dedicated to creating meaningful memories for each person I work with.</p>
+      <p>For bookings or inquiries, feel free to reach out via email at <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+    </div>
 
-      <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
+    <!-- Plan セクション -->
+    <div id="plan" class="content">
+      <h3>Plan</h3>
+      <p>Duration: ~30 minutes</p>
+      <p>Number of photos: 10+ delivered</p>
+      <p>Price: £30</p>
+    </div>
+
+    <!-- Photo セクション -->
+    <div id="photo" class="content">
+      <h3>Photo Gallery</h3>
+      <p>Explore my photo collection from various shoots around London and Europe.</p>
+      <a href="#" class="button">View Photos</a>
     </div>
 
     <!-- Contact セクション -->
-    <div id="contact" class="contact-content">
+    <div id="contact" class="content">
       <h3>Contact</h3>
-      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
-      <p>(For inquiries and bookings, feel free to contact me via email.)</p>
-      <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+      <p>If you have any questions or would like to book a session, feel free to get in touch via email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
     </div>
 
     <script>
-      // セクションの表示切り替え
-      function toggleSection(sectionId) {
-        const sections = ['plan', 'about-me', 'contact'];
-        sections.forEach(id => {
-          const element = document.getElementById(id);
-          if (id === sectionId) {
-            element.style.display = element.style.display === 'block' ? 'none' : 'block';
-          } else {
-            element.style.display = 'none';
-          }
-        });
-      }
-
       // スライドショーのスクリプト
       let slideIndex = 0;
 
@@ -235,9 +215,11 @@
           slides[i].style.display = "none";
         }
         slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
+        if (slideIndex > slides.length) {
+          slideIndex = 1;
+        }
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // 3秒ごとにスライド
+        setTimeout(showSlides, 3000); // 3秒ごとに切り替え
       }
 
       showSlides();
