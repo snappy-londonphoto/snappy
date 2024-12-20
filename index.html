@@ -52,8 +52,10 @@
 
       /* メニュー */
       nav {
-        text-align: center;
+        display: flex;
+        justify-content: center;
         margin-top: 20px; /* メニューとスライドショーの間隔を詰める */
+        flex-wrap: wrap; /* 画面幅が狭くなったときに項目が折り返される */
       }
 
       nav a {
