@@ -51,11 +51,9 @@
 
       /* スライドショーの親要素 */
       .slideshow-container {
-        width: calc(100% + 0.5cm); /* 横幅を100%にプラス0.5cm */
-        margin-left: 0;
-        margin-right: -0.5cm; /* 右側に0.5cmの余白 */
+        width: 100%;
         position: relative;
-        overflow: hidden; /* 横にスライドしないように */
+        overflow: hidden;
         margin: 0 auto; /* 中央に配置 */
         padding: 0; /* 余分なパディングがないか確認 */
         box-sizing: border-box; /* パディングやボーダーを幅に含める */
@@ -133,14 +131,13 @@
         line-height: 1.6;
         max-width: 320px;
         margin: 0 auto;
-        text-align: center;
+        text-align: left; /* Planと同じように左揃え */
       }
 
       /* レスポンシブ対応 */
       @media only screen and (max-width: 768px) {
         .slideshow-container {
           width: 100%;
-          margin-right: 0;
         }
 
         .mySlides img {
