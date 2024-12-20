@@ -145,6 +145,16 @@
         margin-right: 15px;
         vertical-align: middle;
       }
+
+      /* Plan セクション */
+      .plan-content {
+        display: none;
+        margin-top: 20px;
+        text-align: left;
+        font-size: 18px;
+        color: #333333;
+      }
+
     </style>
   </head>
 
@@ -178,12 +188,21 @@
 
     <div class="contact-links">
       <h3>Contact</h3>
+      <a href="javascript:void(0);" class="button" onclick="togglePlan()">Plan</a>
       <a href="javascript:void(0);" class="button" onclick="toggleAboutMe()">About Me</a>
       <a href="photo.html" class="button">Photo</a>
       <a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a>
       <a href="https://www.instagram.com/snappy_londonphoto" target="_blank" class="button">Instagram</a>
     </div>
 
+    <!-- Plan セクション -->
+    <div id="plan" class="plan-content">
+      <h3>撮影プラン</h3>
+      <p>ショートプラン: 所要時間：約30分, 納品枚数：10枚〜, 料金：£30</p>
+      <p>スタンダードプラン: 所要時間：約1時間, 納品枚数：30枚〜, 料金：£50</p>
+    </div>
+
+    <!-- About Me セクション -->
     <div id="about-me" class="about-me-content">
       <img src="https://via.placeholder.com/120" alt="MAKO"> <!-- プロフィール画像 -->
       <div>
@@ -223,6 +242,16 @@
           aboutMeSection.style.display = 'block';
         } else {
           aboutMeSection.style.display = 'none';
+        }
+      }
+
+      // Planの表示/非表示を切り替える関数
+      function togglePlan() {
+        let planSection = document.getElementById('plan');
+        if (planSection.style.display === 'none' || planSection.style.display === '') {
+          planSection.style.display = 'block';
+        } else {
+          planSection.style.display = 'none';
         }
       }
     </script>
