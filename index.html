@@ -55,7 +55,7 @@
         display: flex;
         justify-content: center;
         margin-top: 20px; /* メニューとスライドショーの間隔を詰める */
-        flex-wrap: nowrap; /* モバイルでも横一列に表示 */
+        flex-wrap: nowrap; /* メニュー項目が折り返さないように設定 */
       }
 
       nav a {
@@ -79,7 +79,6 @@
         width: 100%;
         position: relative;
         overflow: hidden;
-        margin-right: 20px; /* 右側に余白を追加 */
       }
 
       .mySlides {
@@ -92,7 +91,16 @@
         object-fit: cover;
         display: block;
         margin: 0 auto;
-        filter: blur(8px); /* 画像にぼかし効果 */
+      }
+
+      /* 画像の縁をぼかす */
+      .mySlides img {
+        filter: blur(15px); /* 画像全体をぼかす */
+        transition: filter 0.5s ease-in-out; /* ぼかしの切り替えを滑らかに */
+      }
+
+      .slideshow-container:hover .mySlides img {
+        filter: blur(0); /* ホバー時にぼかしを解除 */
       }
 
       /* ボタン */
@@ -174,7 +182,7 @@
         width: 40px;
         height: 40px;
         border-radius: 50%;
-        background-image: url('https://github.com/snappy-londonphoto/snappy/blob/5a7b772e22453c6c9669d35d1d3a0e5048037e7c/insta_icon.avif?raw=true');
+        background-image: url('https://github.com/snappy-londonphoto/snappy/blob/f072fe0c9ef379cac4bb72dce6cf780becbac7fc/insta_icon.avif?raw=true');
         background-size: cover;
         background-position: center;
       }
