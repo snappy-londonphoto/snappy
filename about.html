@@ -5,22 +5,29 @@
   <title>SNAPPY</title>
   <link rel="stylesheet" href="stylesheet.css">
   <style>
-    /* ヘッダー画像 */
-    .header-image {
-      width: 100%;
-      height: auto;
+    /* 画像を中央に配置 */
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
     }
 
-    /* 画像と文章の間隔をあける */
+    .profile-image {
+      width: 200px; /* 画像の幅を調整 */
+      height: auto;
+      border-radius: 50%; /* 画像を丸くする場合 */
+    }
+
+    /* 画像と文章の間隔 */
     .text-container {
       text-align: center;
-      margin-top: 30px; /* 画像と文章の間隔 */
-      font-size: 18px; /* フォントサイズ */
-      color: #888; /* グレー */
+      margin-top: 30px;
+      font-size: 18px;
+      color: #888;
       line-height: 1.6;
     }
 
-    /* 見出しの強調 */
     .text-container strong {
       font-size: 20px; /* 見出し部分のフォントサイズを少し大きく */
       font-weight: bold;
@@ -33,7 +40,6 @@
       color: #444;
     }
 
-    /* 英文のスタイル */
     .english-text {
       margin-top: 20px;
       font-size: 18px;
@@ -71,9 +77,9 @@
     </header>
     
     <main>
-      <!-- ヘッダー画像 -->
+      <!-- 画像コンテナ -->
       <div class="image-container">
-        <img src="https://github.com/snappy-londonphoto/snappy/blob/0ae40d31bb7bb0f18ca2af8547c10a49734b2b64/bicycle2.jpg?raw=true" alt="Bicycle Image" class="header-image">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/01bdda1b7336146dc908a0e76013227f766552cc/Profile-removebg-preview.png?raw=true" alt="Mako's Profile" class="profile-image">
       </div>
 
       <!-- 画像の下に追加するテキスト -->
@@ -92,7 +98,7 @@
         </div>
       </div>
     </main>
-   
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
       $(document).ready(function() {
@@ -105,6 +111,6 @@
         });
       });
     </script>
-  
+  </div>
 </body>
 </html>
