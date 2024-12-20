@@ -16,6 +16,7 @@
         margin: 0;
         padding: 0;
         text-align: center; /* 中央寄せ */
+        box-sizing: border-box;
       }
 
       /* 日本語フォントの指定 */
@@ -127,6 +128,7 @@
         justify-content: center; /* 中央に配置 */
         align-items: center;
         gap: 20px; /* ボタン間に広いスペース */
+        flex-wrap: wrap; /* 画面小さくなったときにボタンを折り返す */
       }
 
       /* About Me セクションの非表示 */
@@ -155,6 +157,57 @@
         color: #333333;
       }
 
+      /* レスポンシブ対応 */
+      @media screen and (max-width: 768px) {
+        /* ヘッダーのタイトルとサブタイトルのフォントサイズを小さく */
+        .header h1 {
+          font-size: 32px;
+        }
+
+        .header p {
+          font-size: 16px;
+        }
+
+        /* ボタンのサイズを調整 */
+        .button {
+          padding: 15px;
+          font-size: 20px;
+        }
+
+        /* ギャラリーの画像サイズを調整 */
+        .slideshow-container {
+          margin: 20px auto;
+        }
+
+        /* コンテナの最大幅を100%に設定 */
+        .container {
+          max-width: 100%;
+        }
+
+        /* About Me セクションのフォントサイズを調整 */
+        .about-me-content {
+          font-size: 16px;
+        }
+
+        /* Plan セクションのフォントサイズを調整 */
+        .plan-content {
+          font-size: 16px;
+        }
+      }
+
+      /* スマホ用のボタン配置調整 */
+      @media screen and (max-width: 480px) {
+        /* ボタンを縦に並べる */
+        .contact-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        /* ボタン間のスペース調整 */
+        .button {
+          margin: 10px 0;
+        }
+      }
     </style>
   </head>
 
