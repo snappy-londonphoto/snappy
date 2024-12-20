@@ -1,144 +1,34 @@
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ヘッダー画像 */
+.header-image {
+  width: 100%;
+  height: auto;
 }
 
-body {
-  font-family: 'Arial', sans-serif;
+/* 画像と文章の間隔をあける */
+.text-container {
+  text-align: center;
+  margin-top: 30px; /* 画像と文章の間隔 */
+  font-size: 18px; /* フォントサイズ */
+  color: #888; /* グレー */
   line-height: 1.6;
-  color: #333;
-  background-color: #f9f9f9;
 }
 
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+/* 見出しの強調 */
+.text-container strong {
+  font-size: 20px; /* 見出し部分のフォントサイズを少し大きく */
+  font-weight: bold;
 }
 
-/* Header */
-.header {
-  position: relative;
-  background-color: #333;
-  padding: 10px 20px;
+/* メールアドレスのスタイル */
+.email {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #444;
 }
 
-.header__inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* 英文のスタイル */
+.english-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #444;
 }
-
-.header__title {
-  font-size: 28px;
-  color: #fff;
-}
-
-.header__title a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.header__hamburger {
-  display: none; /* Initially hidden, will appear in mobile view */
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.header__hamburger span {
-  display: block;
-  width: 30px;
-  height: 4px;
-  background-color: #fff;
-  margin: 5px 0;
-}
-
-/* Navigation */
-.header__nav {
-  display: flex;
-  justify-content: flex-end;
-}
-
-.nav__items {
-  list-style: none;
-  display: flex;
-}
-
-.nav-items__item {
-  margin-left: 20px;
-}
-
-.nav-items__item a {
-  text-decoration: none;
-  color: #fff;
-  font-size: 16px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .header__nav {
-    display: none; /* Hide navigation on mobile */
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    background-color: #333;
-    padding: 10px;
-    width: 200px;
-    border-radius: 5px;
-  }
-
-  .header__hamburger {
-    display: block;
-  }
-
-  .header__nav.active {
-    display: block; /* Show navigation when active class is added */
-  }
-
-  .nav-items__item {
-    margin: 10px 0;
-  }
-
-  .nav-items__item a {
-    font-size: 18px;
-  }
-}
-
-/* About Title Section */
-.about-title-section {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.about-title {
-  font-size: 36px;
-  color: #333;
-}
-
-/* About Image Section */
-.about-image-section {
-  width: 100%;
-}
-
-.about-image {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-/* About Text Section */
-.about-text-section {
-  padding: 20px;
-  text-align: center;
-}
-
-.about-text {
-  font-size: 14px;
-  color: #666;
-  line-height: 1.8;
-}
-　
