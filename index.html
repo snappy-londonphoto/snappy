@@ -73,7 +73,7 @@
       }
 
       /* セクションの非表示 */
-      .plan-content, .about-me-content {
+      .plan-content, .about-me-content, .contact-content {
         display: none;
         margin-top: 20px;
         text-align: left;
@@ -126,8 +126,8 @@
       <h3>Contact</h3>
       <a href="javascript:void(0);" class="button" onclick="toggleSection('plan')">Plan</a>
       <a href="javascript:void(0);" class="button" onclick="toggleSection('about-me')">About Me</a>
+      <a href="javascript:void(0);" class="button" onclick="toggleSection('contact')">Contact</a>
       <a href="photo.html" class="button">Photo</a>
-      <a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a>
       <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="button">Instagram</a>
     </div>
 
@@ -183,10 +183,18 @@
       <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
     </div>
 
+    <!-- Contact セクション -->
+    <div id="contact" class="contact-content">
+      <h3>Contact</h3>
+      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+      <p>(For inquiries and bookings, feel free to contact me via email.)</p>
+      <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+    </div>
+
     <script>
       // セクションの表示切り替え
       function toggleSection(sectionId) {
-        const sections = ['plan', 'about-me'];
+        const sections = ['plan', 'about-me', 'contact'];
         sections.forEach(id => {
           const element = document.getElementById(id);
           if (id === sectionId) {
