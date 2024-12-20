@@ -116,18 +116,25 @@
       }
 
       /* メールやInstagramのリンク */
+      .contact-links {
+        display: flex;
+        justify-content: center; /* 中央に配置 */
+        align-items: center;
+        gap: 10px; /* ボタン間に均等なスペース */
+      }
+
       .contact-links a {
         display: inline-block;
         background-color: #ffffff;
         color: #333333;
         padding: 12px 25px;
-        border-radius: 50px;
+        border-radius: 50%; /* 丸いボタンに */
         text-align: center;
         text-decoration: none;
         font-size: 18px;
         border: 2px solid #cccccc;
         transition: all 0.3s ease;
-        margin: 10px;
+        margin: 0 10px; /* ボタン間にスペースを追加 */
       }
 
       .contact-links a:hover {
@@ -186,14 +193,14 @@
 
     <div class="contact-links">
       <h3>Contact</h3>
-      <p><a href="javascript:void(0);" class="button" onclick="toggleAboutMe()">About Me</a></p>
-      <p><a href="photo.html" class="button">Photo</a></p>
-      <p><a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a></p>
-      <p><a href="https://www.instagram.com/snappy_londonphoto" target="_blank" class="button">Instagram</a></p>
+      <a href="javascript:void(0);" class="button" onclick="toggleAboutMe()">About Me</a>
+      <a href="photo.html" class="button">Photo</a>
+      <a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a>
+      <a href="https://www.instagram.com/snappy_londonphoto" target="_blank" class="button">Instagram</a>
     </div>
 
     <div id="about-me" class="about-me-content">
-      <img src="https://github.com/snappy-londonphoto/snappy/blob/e4728b3db2c2a3c6e0be97f468c801dd437e900b/Profile-removebg-preview.png?raw=true" alt="MAKO">
+      <img src="https://via.placeholder.com/50" alt="MAKO">
       <div>
         <p><strong>MAKO</strong></p>
         <p>ロンドン在住のフォトグラファーMAKOです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
