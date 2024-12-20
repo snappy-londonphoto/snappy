@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
-    <title>London Photo</title>
+    <title>London Photography</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="textflow.css">
     <link rel="stylesheet" href="loading.css">
@@ -32,7 +32,6 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         width: 100%;
         box-sizing: border-box;
-        cursor: pointer; /* クリックできることを示す */
       }
 
       .header h1 {
@@ -73,7 +72,7 @@
         background-color: #B2AB9F;
         color: white;
         padding: 20px;
-        border-radius: 0;
+        border-radius: 5px;
         text-align: center;
         text-decoration: none;
         font-size: 20px; /* フォントサイズ調整 */
@@ -82,7 +81,7 @@
         display: block;
         transition: all 0.3s ease;
         margin: 10px 5px;
-        width: 100%; /* ボタンが横幅いっぱいに広がる */
+        width: calc(100% / 3 - 20px); /* ボタンを横一列に3つ並べる */
         height: 60px; /* ボタンの高さ */
         line-height: 60px; /* ボタン内の文字を中央に配置 */
       }
@@ -100,15 +99,6 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 20px;
-        position: absolute; /* ボタンを画像に対して絶対位置に固定 */
-        top: 50%; /* 画面の中央に配置 */
-        transform: translateY(-50%); /* 文字が中央に来るように調整 */
-        width: 100%;
-      }
-
-      .contact-links .button {
-        width: calc(100% / 5 - 20px); /* ボタンを横一列で5つ並べる */
-        margin: 10px;
       }
 
       /* セクションの非表示 */
@@ -139,6 +129,19 @@
         text-align: left;
       }
 
+      /* 背景画像を追加 */
+      .background-image {
+        background-image: url('background-image.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+      }
+
       /* レスポンシブ対応 */
       @media only screen and (max-width: 768px) {
         .button {
@@ -147,16 +150,15 @@
           line-height: 50px;
           font-size: 16px;
         }
-
-        .contact-links .button {
-          width: calc(100% - 20px); /* モバイルでもボタンは横幅いっぱい */
-        }
       }
     </style>
   </head>
 
   <body>
-    <div class="header" onclick="toggleSlideshow()">
+    <!-- 背景画像 -->
+    <div class="background-image"></div>
+
+    <div class="header">
       <h1>London Photography</h1>
       <p>Capturing special moments in London and across Europe</p>
     </div>
@@ -183,11 +185,50 @@
       <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="button">Instagram</a>
     </div>
 
-    <script>
-      let slideIndex = 0;
-      let slideInterval;  // スライドショーを制御するための変数
+    <!-- Plan セクション -->
+    <div id="plan" class="plan-content">
+      <h3>Plan / プラン</h3>
+      <ul>
+        <li>所要時間：約30分</li>
+        <li>納品枚数：10枚〜</li>
+        <li>料金：£30</li>
+      </ul>
+    </div>
 
-      // スライドショーの表示
+    <!-- About Me セクション -->
+    <div id="about-me" class="about-me-content">
+      <h3>About Me</h3>
+      <p>ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。一人ひとりの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+      <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+
+      <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
+    </div>
+
+    <!-- Contact セクション -->
+    <div id="contact" class="contact-content">
+      <h3>Contact</h3>
+      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+      <p>(For inquiries and bookings, feel free to contact me via email.)</p>
+      <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+    </div>
+
+    <script>
+      // セクションの表示切り替え
+      function toggleSection(sectionId) {
+        const sections = ['plan', 'about-me', 'contact'];
+        sections.forEach(id => {
+          const element = document.getElementById(id);
+          if (id === sectionId) {
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+          } else {
+            element.style.display = 'none';
+          }
+        });
+      }
+
+      // スライドショーのスクリプト
+      let slideIndex = 0;
+
       function showSlides() {
         let slides = document.getElementsByClassName("mySlides");
         for (let i = 0; i < slides.length; i++) {
@@ -196,29 +237,10 @@
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // 3秒ごとにスライド
       }
 
-      // スライドショー開始
-      function startSlideshow() {
-        slideInterval = setInterval(showSlides, 3000); // 3秒ごとにスライド
-      }
-
-      // スライドショー停止
-      function stopSlideshow() {
-        clearInterval(slideInterval);
-      }
-
-      // スライドショーの停止と再開をトグル
-      function toggleSlideshow() {
-        if (slideInterval) {
-          stopSlideshow();
-        } else {
-          startSlideshow();
-        }
-      }
-
-      // 初期表示でスライドショーを開始
-      startSlideshow();
+      showSlides();
     </script>
   </body>
 </html>
