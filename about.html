@@ -1,116 +1,53 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>   
-  <meta charset="utf-8">
-  <title>SNAPPY</title>
-  <link rel="stylesheet" href="stylesheet.css">
-  <style>
-    /* 画像を中央に配置 */
-    .image-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
-    }
+<aside class="profile-card">
+  <header>
+    <!-- here’s the avatar -->
+    <a target="_blank" href="#">
+      <img src="http://lorempixel.com/150/150/people/" class="hoverZoomLink">
+    </a>
 
-    .profile-image {
-      width: 200px; /* 画像の幅を調整 */
-      height: auto;
-      border-radius: 50%; /* 画像を丸くする場合 */
-    }
+    <!-- the username -->
+    <h1>
+            John Doe
+          </h1>
 
-    /* 画像と文章の間隔 */
-    .text-container {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 18px;
-      color: #888;
-      line-height: 1.6;
-    }
+    <!-- and role or location -->
+    <h2>
+            Better Visuals
+          </h2>
 
-    .text-container strong {
-      font-size: 20px; /* 見出し部分のフォントサイズを少し大きく */
-      font-weight: bold;
-    }
+  </header>
 
-    /* メールアドレスのスタイル */
-    .email {
-      margin-top: 10px;
-      font-size: 18px;
-      color: #444;
-    }
+  <!-- bit of a bio; who are you? -->
+  <div class="profile-bio">
 
-    .english-text {
-      margin-top: 20px;
-      font-size: 18px;
-      color: #444;
-    }
-  </style>
-</head>
+    <p>
+      It takes monumental improvement for us to change how we live our lives. Design is the way we access that improvement.
+    </p>
 
-<body> 
-  <div class="container">
-    <header class="header">
-      <div class="header__inner">
-        <h1 class="header__title header-title">
-          <a href="pagetitle">SNAPPY</a>
-        </h1>
-
-        <nav class="header__nav nav" id="js-nav">
-          <ul class="nav__items nav-items">
-            <li class="nav-items__item"><a href="about.html">About Me</a></li>
-            <li class="nav-items__item"><a href="plan.html">Plan</a></li>
-            <li class="nav-items__item"><a href="gallery.html">Gallery</a></li>
-            <li class="nav-items__item"><a href="contact.html">Contact</a></li>
-            <li class="nav-items__item">
-              <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank">Instagram</a>
-            </li>
-          </ul>
-        </nav>
-
-        <button class="header__hamburger hamburger" id="js-hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
-    </header>
-    
-    <main>
-      <!-- 画像コンテナ -->
-      <div class="image-container">
-        <img src="https://github.com/snappy-londonphoto/snappy/blob/01bdda1b7336146dc908a0e76013227f766552cc/Profile-removebg-preview.png?raw=true" alt="Mako's Profile" class="profile-image">
-      </div>
-
-      <!-- 画像の下に追加するテキスト -->
-      <div class="text-container">
-        <p><strong>About Me</strong></p>
-        <p><strong>Mako</strong></p>
-        <p>2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。</p>
-        <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
-
-        <div class="email">
-          <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
-        </div>
-        
-        <div class="english-text">
-          <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
-        </div>
-      </div>
-    </main>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-      $(document).ready(function() {
-        const ham = $('#js-hamburger');
-        const nav = $('#js-nav');
-        
-        ham.on('click', function () { //ハンバーガーメニューをクリックしたら
-          ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
-          nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
-        });
-      });
-    </script>
   </div>
-</body>
-</html>
+
+  <!-- some social links to show off -->
+  <ul class="profile-social-links">
+    <li>
+      <a target="_blank" href="https://www.facebook.com/creativedonut">
+        <i class="fa fa-facebook"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://twitter.com/dropyourbass">
+        <i class="fa fa-twitter"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://github.com/vipulsaxena">
+        <i class="fa fa-github"></i>
+      </a>
+    </li>
+    <li>
+      <a target="_blank" href="https://www.behance.net/vipulsaxena">
+       
+        <i class="fa fa-behance"></i>
+      </a>
+    </li>
+  </ul>
+</aside>
