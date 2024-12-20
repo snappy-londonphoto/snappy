@@ -1,134 +1,361 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>London Photo</title>
-  <link rel="stylesheet" href="stylesheet.css">
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <style>
-    /* スライドショー画像の中央揃え */
-    .mySlides img {
-      width: 100%;
-      max-width: 900px; /* 最大幅を設定 */
-      margin: 20px auto; /* 上下左右中央揃え */
-      display: block;
-    }
-
-    /* ボタンのスタイルを目立たせる */
-    .button {
-      background-color: #6A5ACD; /* 明るい青紫 */
-      color: #fff;
-      padding: 15px 25px;
-      border-radius: 8px;
-      text-align: center;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: bold;
-      margin: 10px 5px; /* 横方向のスペースを小さく */
-      display: inline-block;
-      cursor: pointer;
-    }
-
-    .button:hover {
-      background-color: #483D8B; /* ホバー時の濃い青紫 */
-      color: #fff;
-    }
-
-    /* 非表示時 */
-    .hidden {
-      display: none;
-    }
-
-    /* 表示セクションのスタイル */
-    .content-section {
-      margin: 20px auto;
-      padding: 10px;
-      max-width: 900px;
-      text-align: left;
-      font-size: 16px;
-      color: #333;
-      background-color: #f9f9f9;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-  </style>
-</head>
-
-<body>
-  <div class="header">
-    <h1>London Photography</h1>
-    <p>Capturing special moments in London and across Europe</p>
-  </div>
-
-  <div class="slideshow-container">
-    <div class="mySlides">
-      <img src="https://example.com/image1.jpg" alt="Big Ben">
-    </div>
-    <div class="mySlides">
-      <img src="https://example.com/image2.jpg" alt="Big Ben with Flowers">
-    </div>
-    <div class="mySlides">
-      <img src="https://example.com/image3.jpg" alt="London Bridge">
-    </div>
-  </div>
-
-  <div class="contact-links">
-    <button class="button" onclick="showSection('plan')">Plan</button>
-    <button class="button" onclick="showSection('about')">About Me</button>
-    <button class="button" onclick="showSection('email')">Email</button>
-    <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="button">Instagram</a>
-  </div>
-
-  <!-- Planセクション -->
-  <div id="plan" class="content-section hidden">
-    <h3>Plan</h3>
-    <p>撮影プランについての詳細はこちらです。</p>
-    <ul>
-      <li>ショートプラン: 30分, 10枚〜, £30</li>
-      <li>スタンダードプラン: 1時間, 30枚〜, £50</li>
-    </ul>
-    <p>※終日撮影や動画撮影をご希望の場合も、ぜひご相談ください。</p>
-    <p>撮影内容や写真の雰囲気、色味などはお客様のご希望に合わせて調整いたします。</p>
-  </div>
-
-  <!-- About Meセクション -->
-  <div id="about" class="content-section hidden">
-    <h3>About Me</h3>
-    <p>ロンドン在住のフォトグラファーMAKOです。</p>
-    <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
-  </div>
-
-  <!-- Emailセクション -->
-  <div id="email" class="content-section hidden">
-    <h3>Email</h3>
-    <p>Email: snappy.filmphoto@gmail.com</p>
-    <p>お気軽にお問い合わせください。</p>
-  </div>
-
-  <script>
-    // セクションの表示/非表示を管理
-    function showSection(sectionId) {
-      // すべてのセクションを非表示
-      document.querySelectorAll('.content-section').forEach(section => {
-        section.classList.add('hidden');
-      });
-      // 指定されたセクションを表示
-      document.getElementById(sectionId).classList.remove('hidden');
-    }
-
-    // スライドショー表示
-    let slideIndex = 0;
-    function showSlides() {
-      const slides = document.getElementsByClassName("mySlides");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+  <head>
+    <meta charset="utf-8">
+    <title>London Photo</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="textflow.css">
+    <link rel="stylesheet" href="loading.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+      /* 全体の背景色とテキスト色 */
+      body {
+        background-color: #EBE8E2; /* 優しいベージュ背景 */
+        color: #333333; /* ダークグレー */
+        font-family: 'Cormorant Garamond', serif; /* 英語フォント */
+        margin: 0;
+        padding: 0;
+        text-align: center; /* 中央寄せ */
+        box-sizing: border-box;
       }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1; }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 3000); // 3秒ごとに切り替え
-    }
-    showSlides();
-  </script>
-</body>
+
+      /* 日本語フォントの指定 */
+      p, li, h1, h3 {
+        font-family: 'Noto Serif Japanese', serif; /* 日本語フォント */
+      }
+
+      /* ヘッダー部分 */
+      .header {
+        background-color: #D2C9BE; /* やわらかいベージュ */
+        padding: 50px 20px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .header h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color: #333333; /* ダークグレー */
+        letter-spacing: 1px;
+        margin: 0;
+      }
+
+      .header p {
+        font-size: 18px;
+        color: #888888; /* 明るめのグレー */
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      /* 流れるテキスト部分 */
+      .bbs {
+        background-color: #EBE8E2; /* サイト全体と同じ背景色 */
+        padding: 20px;
+        font-size: 20px;
+        color: #333333;
+        max-width: 1200px;
+        margin: 20px auto;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      /* ギャラリーのセクション */
+      .container {
+        background-color: #D2C9BE; /* やわらかいベージュ */
+        padding: 40px 20px;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      /* ボタンの基本スタイル */
+      .button {
+        background-color: #B2AB9F; /* ボタンの背景色 */
+        color: white; /* 文字の色 */
+        padding: 25px; /* ボタンのサイズを大きく */
+        border-radius: 50%; /* 完全な丸いボタン */
+        text-align: center;
+        text-decoration: none;
+        font-size: 24px; /* 太めの文字 */
+        font-weight: bold; /* 太い文字 */
+        border: 2px solid #cccccc; /* グレーのボーダー */
+        display: inline-block;
+        transition: all 0.3s ease;
+        margin: 15px 10px; /* ボタン間にスペース */
+      }
+
+      /* ボタンホバー時 */
+      .button:hover {
+        background-color: #696156; /* 押したときの色 */
+        color: white; /* 文字色 */
+        border: 2px solid #696156;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボタンに軽い影を追加 */
+      }
+
+      /* スライドショーの画像の調整 */
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: 40px auto; /* スライドショーの上部と下部にスペース */
+        display: block;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      .mySlides img {
+        width: 100%;
+        border-radius: 8px;
+        height: auto;
+        margin-bottom: 20px; /* 画像の下にスペース */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      footer {
+        background-color: #C3BBB0; /* 中間トーンのベージュ */
+        padding: 20px;
+        text-align: center;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      /* メールやInstagramのリンク */
+      .contact-links {
+        display: flex;
+        justify-content: center; /* 中央に配置 */
+        align-items: center;
+        gap: 20px; /* ボタン間に広いスペース */
+        flex-wrap: wrap; /* 画面小さくなったときにボタンを折り返す */
+      }
+
+      /* About Me セクションの非表示 */
+      .about-me-content {
+        display: none;
+        margin-top: 20px;
+        text-align: left;
+        font-size: 18px;
+        color: #333333;
+      }
+
+      .about-me-content img {
+        width: 120px; /* プロフィール画像を少し大きく */
+        height: 120px; 
+        border-radius: 50%;
+        margin-right: 15px;
+        vertical-align: middle;
+      }
+
+      /* Plan セクション */
+      .plan-content {
+        display: none;
+        margin-top: 20px;
+        text-align: left;
+        font-size: 18px;
+        color: #333333;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .plan-content h3 {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .plan-content ul {
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      /* レスポンシブ対応 */
+      @media screen and (max-width: 768px) {
+        /* ヘッダーのタイトルとサブタイトルのフォントサイズを小さく */
+        .header h1 {
+          font-size: 32px;
+        }
+
+        .header p {
+          font-size: 16px;
+        }
+
+        /* ボタンのサイズを調整 */
+        .button {
+          padding: 15px;
+          font-size: 20px;
+        }
+
+        /* ギャラリーの画像サイズを調整 */
+        .slideshow-container {
+          margin: 20px auto;
+        }
+
+        /* コンテナの最大幅を100%に設定 */
+        .container {
+          max-width: 100%;
+        }
+
+        /* About Me セクションのフォントサイズを調整 */
+        .about-me-content {
+          font-size: 16px;
+        }
+
+        /* Plan セクションのフォントサイズを調整 */
+        .plan-content {
+          font-size: 16px;
+        }
+      }
+
+      /* スマホ用のボタン配置調整 */
+      @media screen and (max-width: 480px) {
+        /* ボタンを縦に並べる */
+        .contact-links {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        /* ボタン間のスペース調整 */
+        .button {
+          margin: 10px 0;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="header">
+      <h1>London Photography</h1>
+      <p>Capturing special moments in London and across Europe</p>
+    </div>
+
+    <div class="bbs">
+      <ul>
+        <li>London Photography</li>
+        <li>Specializing in capturing beautiful moments</li>
+        <li>Available for bookings in London and across Europe</li>
+      </ul>
+    </div>
+
+    <div class="slideshow-container">
+      <div class="mySlides">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben2.jpeg?raw=true" alt="Big Ben">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben1.jpeg?raw=true" alt="Big Ben">
+      </div>
+
+      <div class="mySlides">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben.flower1.jpeg?raw=true" alt="Big Ben with Flowers">
+      </div>
+    </div>
+
+    <div class="contact-links">
+      <h3>Contact</h3>
+      <a href="javascript:void(0);" class="button" onclick="togglePlan()">Plan</a>
+      <a href="javascript:void(0);" class="button" onclick="toggleAboutMe()">About Me</a>
+      <a href="photo.html" class="button">Photo</a>
+      <a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a>
+      <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="button">Instagram</a>
+    </div>
+
+    <!-- Plan セクション -->
+    <div id="plan" class="plan-content">
+      <h3>Plan</h3>
+      <h4>01 / ショートプラン</h4>
+      <ul>
+        <li>所要時間：約30分</li>
+        <li>納品枚数：10枚〜</li>
+        <li>料金：£30</li>
+      </ul>
+
+      <h4>02 / スタンダードプラン</h4>
+      <ul>
+        <li>所要時間：約1時間</li>
+        <li>納品枚数：30枚〜</li>
+        <li>料金：£50</li>
+        <li>※終日撮影や動画撮影をご希望の場合も、ぜひご相談ください。</li>
+        <li>撮影内容や写真の雰囲気、色味などはお客様のご希望に合わせて調整いたします。</li>
+      </ul>
+
+      <h4>Genre</h4>
+      <ul>
+        <li>ポートレート</li>
+        <li>ファミリーフォト</li>
+        <li>カップルフォト</li>
+        <li>旅行の記念写真</li>
+        <li>ペット写真</li>
+        <li>商品写真</li>
+      </ul>
+      <p>その他、ご要望に応じて幅広く対応いたしますので、お気軽にご相談ください。</p>
+
+      <h4>Area</h4>
+      <ul>
+        <li>ロンドン市内の観光地（ウェストミンスター周辺など）</li>
+        <li>ご自宅やお好きな場所</li>
+      </ul>
+      <p>交通費をお客様にご負担いただければ、ロンドン市外での撮影も承ります。ご希望の場所がございましたら、ぜひ一度ご相談ください。</p>
+
+      <h4>Contact</h4>
+      <p>お気軽に<a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a>までご連絡ください。</p>
+      <p>お客様との大切な時間を一緒に作り上げることを楽しみにしています。</p>
+    </div>
+
+    <!-- About Me セクション -->
+    <div id="about-me" class="about-me-content">
+      <div>
+        <p><strong>MAKO</strong></p>
+        <p>ロンドン在住のフォトグラファーMAKOです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+        <p><strong>Email:</strong> <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+        <br>
+        <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <!-- 「トップに戻る」画像の削除部分 -->
+    </footer>
+
+    <script>
+      // スライドショーのスクリプト
+      let slideIndex = 0;
+
+      function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 3000); // 3秒ごとに切り替え
+      }
+
+      showSlides();
+
+      // About Meの表示/非表示を切り替える関数
+      function toggleAboutMe() {
+        let aboutMeSection = document.getElementById('about-me');
+        if (aboutMeSection.style.display === 'none' || aboutMeSection.style.display === '') {
+          aboutMeSection.style.display = 'block';
+        } else {
+          aboutMeSection.style.display = 'none';
+        }
+      }
+
+      // Planの表示/非表示を切り替える関数
+      function togglePlan() {
+        let planSection = document.getElementById('plan');
+        if (planSection.style.display === 'none' || planSection.style.display === '') {
+          planSection.style.display = 'block';
+        } else {
+          planSection.style.display = 'none';
+        }
+      }
+    </script>
+  </body>
 </html>
