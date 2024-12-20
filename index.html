@@ -8,102 +8,74 @@
     <link rel="stylesheet" href="loading.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
-      /* 全体の背景色とテキスト色 */
+      /* 基本の背景色とテキスト色 */
       body {
-        background-color: #f9f9f9; /* 穏やかなグレー */
+        background-color: #f4f4f9; /* 淡いグレー */
         color: #333333; /* ダークグレー */
-        font-family: 'Montserrat', sans-serif; /* Montserratフォント */
-        margin: 0;
-        padding: 0;
-        text-align: center; /* 中央寄せ */
+        font-family: 'Montserrat', sans-serif; /* 英語はMontserrat */
       }
 
-      /* ヘッダー部分 */
+      /* ヘッダー部分（ロゴ画像なし） */
       .header {
         background-color: #ffffff; /* 白背景 */
-        padding: 50px 20px;
+        padding: 50px 0;
         text-align: center;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 100%;
-        box-sizing: border-box;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
       .header h1 {
-        font-size: 48px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 48px; /* 大きなフォントサイズ */
         font-weight: bold;
-        color: #333333; /* ダークグレー */
-        letter-spacing: 1px;
-        margin: 0;
+        color: #234466; /* 深みのあるブルー */
+        letter-spacing: 2px;
       }
 
       .header p {
         font-size: 18px;
-        color: #888888; /* 明るめのグレー */
+        color: #5a9bd5; /* 穏やかなブルー */
         margin-top: 10px;
-        margin-bottom: 0;
       }
 
-      /* 流れるテキスト部分 */
-      .bbs {
-        background-color: #f9f9f9; /* サイト全体と同じ背景色 */
-        padding: 20px;
-        font-size: 20px;
-        color: #333333;
-        max-width: 1200px;
-        margin: 20px auto;
-        font-family: 'Montserrat', sans-serif;
-      }
-
-      /* ギャラリーのセクション */
+      /* ギャラリーのセクションの色調整 */
       .container {
         background-color: #ffffff; /* 白背景 */
-        padding: 40px 20px;
+        padding: 20px;
         margin-top: 20px;
         border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        max-width: 1200px;
-        margin: 20px auto;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
-      /* ボタンの基本スタイル */
+      /* リンクの色 */
+      a {
+        color: #5a9bd5; /* 穏やかなブルー */
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #3c7b9c;
+      }
+
+      /* ボタンのスタイル */
       .button {
-        background-color: #ffffff; /* 白背景 */
-        color: #333333; /* ダークグレー */
-        padding: 12px 25px;
-        border-radius: 50px; /* 丸みを帯びたデザイン */
+        background-color: #5a9bd5; /* 穏やかなブルー */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
         text-align: center;
         text-decoration: none;
-        font-size: 18px;
-        border: 2px solid #cccccc; /* グレーのボーダー */
         display: inline-block;
-        transition: all 0.3s ease;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin: 10px 0;
       }
 
-      /* ボタンホバー時 */
       .button:hover {
-        background-color: #5a9bd5; /* 穏やかなブルー */
-        color: #ffffff; /* 白文字 */
-        border: 2px solid #5a9bd5;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボタンに軽い影を追加 */
+        background-color: #3c7b9c;
       }
 
       /* スライドショーの画像の調整 */
-      .slideshow-container {
-        position: relative;
-        max-width: 100%;
-        margin: auto;
-        display: block;
-      }
-
-      .mySlides {
-        display: none;
-      }
-
       .mySlides img {
-        width: 100%;
-        border-radius: 8px;
+        border-radius: 10px;
+        max-width: 100%;
         height: auto;
       }
 
@@ -111,48 +83,61 @@
         background-color: #e8f0f5; /* 薄いブルー */
         padding: 20px;
         text-align: center;
-        max-width: 1200px;
-        margin: 20px auto;
       }
 
-      /* メールやInstagramのリンク */
-      .contact-links a {
-        display: inline-block;
+      /* About Me セクション */
+      .about-me-container {
+        display: none; /* 初期状態では非表示 */
         background-color: #ffffff;
-        color: #333333;
-        padding: 12px 25px;
-        border-radius: 50px;
-        text-align: center;
-        text-decoration: none;
-        font-size: 18px;
-        border: 2px solid #cccccc;
-        transition: all 0.3s ease;
-        margin: 10px;
+        padding: 20px;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
-      .contact-links a:hover {
-        background-color: #5a9bd5;
-        color: #ffffff;
-        border: 2px solid #5a9bd5;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      .about-me-container img {
+        width: 150px;
+        border-radius: 50%;
+        margin-right: 20px;
+      }
+
+      .about-me-text {
+        display: flex;
+        align-items: center;
+      }
+
+      /* スライドショーのコンテナ */
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        padding-bottom: 20px;
+      }
+
+      /* スライドの動き */
+      .mySlides {
+        display: none;
       }
     </style>
   </head>
 
   <body>
+    <!-- ヘッダー -->
     <div class="header">
       <h1>London Photography</h1>
       <p>Capturing special moments in London and across Europe</p>
     </div>
 
+    <!-- 流れるテキスト -->
     <div class="bbs">
       <ul>
-        <li>London Photography</li>
-        <li>Specializing in capturing beautiful moments</li>
-        <li>Available for bookings in London and across Europe</li>
+        <li>★ London Photography ★</li>
+        <li>★ Specializing in capturing beautiful moments ★</li>
+        <li>★ Available for bookings in London and across Europe ★</li>
       </ul>
     </div>
 
+    <!-- スライドショー -->
     <div class="slideshow-container">
       <div class="mySlides">
         <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben2.jpeg?raw=true" alt="Big Ben">
@@ -167,6 +152,7 @@
       </div>
     </div>
 
+    <!-- ギャラリー（ポートフォリオ） -->
     <div class="container">
       <details>
         <summary>Portfolio</summary>
@@ -177,32 +163,63 @@
       </details>
     </div>
 
-    <div class="contact-links">
+    <!-- About Me ボタン -->
+    <div class="container">
+      <a href="javascript:void(0);" class="button" onclick="toggleAboutMe()">About Me</a>
+    </div>
+
+    <!-- About Me セクション -->
+    <div class="about-me-container" id="aboutMe">
+      <div class="about-me-text">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/3e06e8ce862d501f622a3b736af03e487cf2be3a/Profile-removebg-preview.png?raw=true" alt="Mako's Profile Picture">
+        <div>
+          <p><strong>Mako</strong></p>
+          <p>ロンドン在住のフォトグラファーMakoです。特別な瞬間を、自然な表情と共に写真に残します。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+          <h3><a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></h3>
+        </div>
+      </div>
+    </div>
+
+    <!-- メールとInstagram -->
+    <div class="contact-links container">
       <h3>Contact</h3>
       <p><a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a></p>
       <p><a href="https://www.instagram.com/snappy_londonphoto" target="_blank" class="button">Instagram</a></p>
     </div>
 
+    <!-- フッター -->
     <footer class="footer" id="jumpTop">
       <img src="https://github.com/snappy-londonphoto/snappy/blob/main/TOPobake.jpg?raw=true" alt="Footer Image">
     </footer>
 
+    <!-- スクリプト -->
     <script>
-      // スライドショーのスクリプト
-      let slideIndex = 0;
+      $('#jumpTop').click(function () {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+      });
 
-      function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
+      // About Me セクションを表示・非表示
+      function toggleAboutMe() {
+        var aboutMeSection = document.getElementById('aboutMe');
+        if (aboutMeSection.style.display === 'none' || aboutMeSection.style.display === '') {
+          aboutMeSection.style.display = 'block';
+        } else {
+          aboutMeSection.style.display = 'none';
         }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 3000); // 3秒ごとに切り替え
       }
 
-      showSlides();
+      $(window).on('load scroll', function() {
+        var windowHeight = $(window).height();
+        var windowScrollTop = $(window).scrollTop();
+        $('.body-img img').each(function() {
+          var imgOffset = $(this).offset().top;
+          if (windowScrollTop + windowHeight > imgOffset) {
+            var imgSrc = $(this).attr('data-src');
+            $(this).attr('src', imgSrc);
+            $(this).removeAttr('data-src');
+          }
+        });
+      });
     </script>
   </body>
 </html>
