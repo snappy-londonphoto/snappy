@@ -22,39 +22,9 @@
         font-family: 'Noto Serif Japanese', serif;
       }
 
-      /* Instagramアイコン */
-      .insta-icon {
-        position: fixed;
-        z-index: 100;
-        width: 40px;
-        height: 40px;
-        background-image: url('https://github.com/snappy-londonphoto/snappy/blob/f072fe0c9ef379cac4bb72dce6cf780becbac7fc/insta_icon.avif?raw=true');
-        background-size: cover;
-        background-position: center;
-        border-radius: 50%;
-        transition: opacity 0.3s ease;
-      }
-
-      /* PCの場合：右上に配置 */
-      @media (min-width: 768px) {
-        .insta-icon {
-          top: 20px;
-          right: 20px;
-        }
-      }
-
-      /* モバイルの場合：SNAPPY FILMの上に配置 */
-      @media (max-width: 768px) {
-        .insta-icon {
-          top: 60px;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-      }
-
-      /* ヘッダー（SNAPPY FILMの追従） */
+      /* ヘッダー */
       header {
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
         width: 100%;
@@ -71,7 +41,6 @@
         font-weight: bold;
         letter-spacing: 1px;
         text-transform: uppercase;
-        margin: 0;
       }
 
       header .location {
@@ -84,24 +53,23 @@
       /* メニュー */
       nav {
         text-align: center;
-        margin-top: 20px;
+        margin-top: 20px; /* メニューとスライドショーの間隔を詰める */
       }
 
       nav a {
         text-decoration: none;
         color: #333;
-        font-size: 20px;
+        font-size: 20px;  /* PLANに合わせたフォントサイズ */
         margin: 0 20px;
         text-transform: uppercase;
         font-weight: bold;
         display: inline-block;
         padding-bottom: 5px;
-        transition: all 0.3s ease;
       }
 
       nav a:hover {
         color: #B2AB9F;
-        border-bottom: 2px solid #B2AB9F;
+        border-bottom: 2px solid #B2AB9F;  /* ホバー時に下線を表示 */
       }
 
       /* スライドショー */
@@ -109,7 +77,6 @@
         width: 100%;
         position: relative;
         overflow: hidden;
-        margin-top: 100px; /* ヘッダーとの間隔を調整 */
       }
 
       .mySlides {
@@ -122,6 +89,24 @@
         object-fit: cover;
         display: block;
         margin: 0 auto;
+      }
+
+      /* ボタン */
+      .button {
+        background-color: #B2AB9F;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+        display: inline-block;
+        transition: background-color 0.3s;
+      }
+
+      .button:hover {
+        background-color: #696156;
       }
 
       /* セクション */
@@ -142,6 +127,11 @@
         max-width: 900px;
         margin: 0 auto;
         color: #555;
+      }
+
+      .content a {
+        color: #B2AB9F;
+        font-weight: bold;
       }
 
       /* Planセクションのスタイル */
@@ -180,7 +170,7 @@
 
         nav a {
           font-size: 16px;
-          margin: 0 15px;
+          margin: 0 15px; /* モバイルでのメニュー間隔調整 */
         }
 
         .content h3 {
@@ -203,14 +193,12 @@
 
     <!-- メニュー -->
     <nav>
+      <a href="#home">HOME</a>
       <a href="#plan">PLAN</a>
       <a href="#about-me">ABOUT ME</a>
-      <a href="photo-gallery.html" target="_blank">PHOTO</a>
+      <a href="photo-gallery.html" target="_blank">PHOTO</a> <!-- リンク先のページ -->
       <a href="#contact">CONTACT</a>
     </nav>
-
-    <!-- Instagramアイコン -->
-    <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="insta-icon"></a>
 
     <!-- スライドショー -->
     <div class="slideshow-container">
@@ -225,7 +213,65 @@
       </div>
     </div>
 
-    <!-- 他のコンテンツ -->
+    <!-- Home セクション -->
+    <div id="home" class="content">
+      <h3>Welcome to Snappy Film</h3>
+      <p>Capturing special moments in London and across Europe. For bookings and inquiries, please feel free to contact me.</p>
+    </div>
+
+    <!-- Plan セクション -->
+    <div id="plan" class="content">
+      <h3>Plan</h3>
+      
+      <h4>01. Short Plan</h4>
+      <ul>
+        <li>所要時間：約30分</li>
+        <li>納品枚数：10枚〜</li>
+        <li>料金：£30</li>
+      </ul>
+
+      <h4>02. Standard Plan</h4>
+      <ul>
+        <li>所要時間：約1時間</li>
+        <li>納品枚数：30枚〜</li>
+        <li>料金：£50</li>
+      </ul>
+
+      <p>終日撮影や動画撮影をご希望の場合も、ぜひご相談ください。撮影内容や写真の雰囲気、色味などはお客様のご希望に合わせて調整いたします。</p>
+
+      <h4>Genre</h4>
+      <ul>
+        <li>ポートレート</li>
+        <li>ファミリーフォト</li>
+        <li>カップルフォト</li>
+        <li>旅行の記念写真</li>
+        <li>ペット写真</li>
+        <li>商品写真</li>
+      </ul>
+      <p>その他、ご要望に応じて幅広く対応いたしますので、お気軽にご相談ください。</p>
+
+      <h4>Area</h4>
+      <ul>
+        <li>ロンドン市内の観光地（ウェストミンスター周辺など）</li>
+        <li>ご自宅やお好きな場所</li>
+      </ul>
+      <p>交通費をお客様にご負担いただければ、ロンドン市外での撮影も承ります。ご希望の場所がございましたら、ぜひ一度ご相談ください。</p>
+    </div>
+
+    <!-- About Me セクション -->
+    <div id="about-me" class="content">
+      <h3>About Me</h3>
+      <p>こんにちは、ロンドン在住のMakoです。2024年1月からロンドンに住み、特別な瞬間を写真に収めるサービスを始めました。撮影依頼やご相談は、メールでお気軽にお問い合わせください。</p>
+      <p>Hello, I’m Mako, a London-based photographer. I specialize in capturing special moments across London and Europe. I started my photography journey in January 2024 and have been dedicated to creating meaningful memories for each person I work with.</p>
+      <p>For bookings or inquiries, feel free to reach out via email at <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+    </div>
+
+    <!-- Contact セクション -->
+    <div id="contact" class="content">
+      <h3>Contact</h3>
+      <p>お気軽に<a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a>までご連絡ください。</p>
+      <p>お客様との大切な時間を一緒に作り上げることを楽しみにしています。</p>
+    </div>
 
     <script>
       // スライドショーのスクリプト
