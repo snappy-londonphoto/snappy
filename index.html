@@ -32,6 +32,7 @@
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         width: 100%;
         box-sizing: border-box;
+        cursor: pointer; /* クリックできることを示す */
       }
 
       .header h1 {
@@ -99,6 +100,10 @@
         flex-wrap: wrap;
         justify-content: center;
         margin-top: 20px;
+        position: absolute; /* ボタンを画像に対して絶対位置に固定 */
+        top: 50%; /* 画面の中央に配置 */
+        transform: translateY(-50%); /* 文字が中央に来るように調整 */
+        width: 100%;
       }
 
       .contact-links .button {
@@ -151,7 +156,7 @@
   </head>
 
   <body>
-    <div class="header">
+    <div class="header" onclick="toggleSlideshow()">
       <h1>London Photography</h1>
       <p>Capturing special moments in London and across Europe</p>
     </div>
@@ -178,84 +183,11 @@
       <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="button">Instagram</a>
     </div>
 
-    <!-- Plan セクション -->
-    <div id="plan" class="plan-content">
-      <h3>Plan / プラン</h3>
-      <h4>01. Short Plan</h4>
-      <ul>
-        <li>所要時間：約30分</li>
-        <li>納品枚数：10枚〜</li>
-        <li>料金：£30</li>
-      </ul>
-
-      <h4>02. Standard Plan</h4>
-      <ul>
-        <li>所要時間：約1時間</li>
-        <li>納品枚数：30枚〜</li>
-        <li>料金：£50</li>
-      </ul>
-      <p>終日撮影や動画撮影をご希望の場合も、ぜひご相談ください。<br>
-        撮影内容や写真の雰囲気、色味などはお客様のご希望に合わせて調整いたします。</p>
-
-      <h4>Genre / ジャンル</h4>
-      <ul>
-        <li>ポートレート</li>
-        <li>ファミリーフォト</li>
-        <li>カップルフォト</li>
-        <li>旅行の記念写真</li>
-        <li>ペット写真</li>
-        <li>商品写真</li>
-      </ul>
-      <p>その他、ご要望に応じて幅広く対応いたしますので、お気軽にご相談ください。</p>
-
-      <h4>Area / 撮影エリア</h4>
-      <ul>
-        <li>ロンドン市内の観光地（ウェストミンスター周辺など）</li>
-        <li>ご自宅やお好きな場所</li>
-      </ul>
-      <p>交通費をお客様にご負担いただければ、ロンドン市外での撮影も承ります。<br>
-        ご希望の場所がございましたら、ぜひ一度ご相談ください。</p>
-
-      <h4>Contact / 連絡先</h4>
-      <p>お気軽に<a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a>までご連絡ください。<br>
-        お客様との大切な時間を一緒に作り上げることを楽しみにしています。</p>
-    </div>
-
-    <!-- About Me セクション -->
-    <div id="about-me" class="about-me-content">
-      <h3>About Me</h3>
-      <p>ロンドン在住のフォトグラファーMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
-      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
-
-      <!-- プロフィール画像 -->
-      <img class="profile-img" src="https://github.com/snappy-londonphoto/snappy/blob/c7f60f3e264a9b58d37871f8ed3bcb25d933d651/profile2.png?raw=true" alt="Mako's Profile Image">
-    </div>
-
-    <!-- Contact セクション -->
-    <div id="contact" class="contact-content">
-      <h3>Contact</h3>
-      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
-      <p>(For inquiries and bookings, feel free to contact me via email.)</p>
-      <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
-    </div>
-
     <script>
-      // セクションの表示切り替え
-      function toggleSection(sectionId) {
-        const sections = ['plan', 'about-me', 'contact'];
-        sections.forEach(id => {
-          const element = document.getElementById(id);
-          if (id === sectionId) {
-            element.style.display = element.style.display === 'block' ? 'none' : 'block';
-          } else {
-            element.style.display = 'none';
-          }
-        });
-      }
-
-      // スライドショーのスクリプト
       let slideIndex = 0;
+      let slideInterval;  // スライドショーを制御するための変数
 
+      // スライドショーの表示
       function showSlides() {
         let slides = document.getElementsByClassName("mySlides");
         for (let i = 0; i < slides.length; i++) {
@@ -264,10 +196,29 @@
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // 3秒ごとにスライド
       }
 
-      showSlides();
+      // スライドショー開始
+      function startSlideshow() {
+        slideInterval = setInterval(showSlides, 3000); // 3秒ごとにスライド
+      }
+
+      // スライドショー停止
+      function stopSlideshow() {
+        clearInterval(slideInterval);
+      }
+
+      // スライドショーの停止と再開をトグル
+      function toggleSlideshow() {
+        if (slideInterval) {
+          stopSlideshow();
+        } else {
+          startSlideshow();
+        }
+      }
+
+      // 初期表示でスライドショーを開始
+      startSlideshow();
     </script>
   </body>
 </html>
