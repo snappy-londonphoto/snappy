@@ -51,9 +51,11 @@
 
       /* スライドショーの親要素 */
       .slideshow-container {
-        width: 100%; /* 横幅100%に設定 */
+        width: calc(100% + 0.5cm); /* 横幅を100%にプラス0.5cm */
+        margin-left: 0;
+        margin-right: -0.5cm; /* 右側に0.5cmの余白 */
         position: relative;
-        overflow: hidden; /* はみ出さないように */
+        overflow: hidden; /* 横にスライドしないように */
         margin: 0 auto; /* 中央に配置 */
         padding: 0; /* 余分なパディングがないか確認 */
         box-sizing: border-box; /* パディングやボーダーを幅に含める */
@@ -133,6 +135,25 @@
         margin: 0 auto;
         text-align: center;
       }
+
+      /* レスポンシブ対応 */
+      @media only screen and (max-width: 768px) {
+        .slideshow-container {
+          width: 100%;
+          margin-right: 0;
+        }
+
+        .mySlides img {
+          width: 100%;  /* モバイルでも画像が横にスクロールしないように */
+        }
+
+        .button {
+          width: 60px;
+          height: 60px;
+          line-height: 60px; /* ボタン内の文字を中央に */
+          font-size: 14px; /* モバイル用にフォントサイズを調整 */
+        }
+      }
     </style>
   </head>
 
@@ -210,7 +231,7 @@
     <!-- About Me セクション -->
     <div id="about-me" class="about-me-content">
       <h3>About Me</h3>
-      <p>イギリス ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
+      <p>ロンドン在住のフォトグラファーMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
       <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
 
       <!-- プロフィール画像 -->
