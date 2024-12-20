@@ -6,11 +6,25 @@
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="textflow.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+      /* スライドショーのスタイル */
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      .mySlides img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
   </head>
 
   <body>
-    <!-- ローディング画面の部分を削除しました -->
-    
     <div class="header">
       <img src="https://github.com/snappy-londonphoto/snappy/blob/e555f285d8330de226f02f50fba9e9f48d1c968e/logo-londonbus.png?raw=true" alt="London Photography Logo">
     </div>
@@ -23,16 +37,17 @@
       </ul>
     </div>
 
+    <!-- スライドショー -->
     <div class="slideshow-container">
-      <div class="mySlides">
+      <div class="mySlides fade">
         <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben2.jpeg?raw=true" alt="Big Ben">
       </div>
 
-      <div class="mySlides">
+      <div class="mySlides fade">
         <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben1.jpeg?raw=true" alt="Big Ben">
       </div>
 
-      <div class="mySlides">
+      <div class="mySlides fade">
         <img src="https://github.com/snappy-londonphoto/snappy/blob/30cd8d43ce9b655864e0ea934fde3f28d5997162/bigben.flower1.jpeg?raw=true" alt="Big Ben with Flowers">
       </div>
     </div>
@@ -68,10 +83,25 @@
     </div>
 
     <footer class="footer" id="jumpTop">
-      <img src="https://github.com/snappy-londonphoto/snappy/blob/main/TOPobake.jpg?raw=true" alt="Footer Image">
+      <img src="https://github.com/snappy-londonphoto/snappy/blob/e555f285d8330de226f02f50fba9e9f48d1c968e/logo-londonbus.png?raw=true" alt="Back to Top Button">
     </footer>
 
     <script>
+      // スライドショーを自動で切り替えるJavaScript
+      var slideIndex = 0;
+      showSlides();
+
+      function showSlides() {
+        var slides = document.getElementsByClassName("mySlides");
+        for (var i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 3000); // 3秒ごとにスライドを切り替え
+      }
+
       $('#jumpTop').click(function () {
         $('html, body').animate({ scrollTop: 0 }, 'slow');
       });
