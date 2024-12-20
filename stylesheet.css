@@ -1,0 +1,133 @@
+.container h1 a,
+.container a,
+.container details summary,
+.container a.email {
+  width: 1100px; /* Set the width to match the slideshow image */
+}
+
+.header img {
+  width:1100px;
+  height: auto;
+  display: block;
+  margin: 10px 1px 0px;
+  float:left;
+  padding:0;
+}
+ 
+.container {
+  width: 100%;
+  margin-bottom: 0px; /* 追加 */
+}
+
+.container h1 {
+  margin: 0;
+}
+
+.container details summary {/* GALLERY ARTIST OSの位置調整 */
+  font-family: "Impact", sans-serif;
+  font-size: 150px;
+  color: whitesmoke;
+  margin: 0 auto; /* 水平方向に中央揃え */
+  background-color: black;
+  padding-left: 30px;
+  cursor: pointer; /* クリック可能であることを示すカーソルを設定 */
+}
+
+.container details summary::-webkit-details-marker {
+  display: none; /* ネイティブの開閉アイコンを非表示にする */
+}
+
+.artist-title {
+  font-family: "Impact", sans-serif;
+  color: whitesmoke;
+  text-align: center;
+  margin-top: 50px; /* 適切なマージンを調整してください */
+}
+
+body { /*項目のサイズ配置調整*/
+  margin: 0;
+  font-size:0px;
+  font-family: "Impact", sans-serif;
+  background-color: black;
+}
+
+img { /*スライドショーの画像サイズ*/
+  width:1100px;
+  padding-left: 30px;
+}
+
+.container h1, .container details {
+  display: inline-block; /* h1要素とdetails要素を横並びにする */
+}
+
+.container h1 a{
+  text-decoration: none;
+  font-size: 150px; /* 全体のテキストサイズを設定 */
+  margin: 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+h2 {/* 赤文字フォントの位置サイズ調整 */
+  margin: 0;
+  font-size: 80px;
+  padding-left: 60px;
+  float: left;
+}
+
+.container a {
+  color: whitesmoke;
+  text-decoration: none;
+  font-size: 90px; /* 赤字テキストサイズを設定 */
+  padding-left: 30px;
+}
+
+.container a.email {
+  font-size: 50px; /* Adjust the font size as needed */
+}
+
+
+.artistlogo {
+  display: block;
+  margin: 100px auto 0;
+  padding-top: 20px;
+  width: 700px; /* 画像の幅を指定 */
+  height: 700px; /* 画像の高さを指定 */
+  overflow: hidden; /* 画像の領域外を隠すために必要 */
+}
+
+.artistlogo img {
+  display: block;
+  width: 90%; /* 親要素に合わせて画像の幅を調整 */
+  height: auto; /* 高さは自動調整 */
+  border-radius: 50%; /* 丸く表示するための border-radius */
+}
+
+.sota-text{
+  font-family: "Impact", sans-serif;
+  font-size: 130px;
+  color: whitesmoke;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 0px;
+}
+
+.japanese-figcaption, .english-figcaption {
+  font-family: 'Noto Serif JP', sans-serif;
+  color: whitesmoke;
+  font-size: 30px;
+  width: 85%;
+  margin: 0 auto; 
+  padding: 1px 50px 1px 0; /* 左側のpaddingを調整 */
+}
+
+.footer img{ /*toriキャラの設定*/
+  width: 400px; /* 画像の横幅を調整 */
+  height: auto; /* 高さは自動調整 */
+  float: right;
+  margin-top: 1px;
+  margin-right: 1px;
+  padding-right: 5px;
+}
