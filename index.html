@@ -53,7 +53,7 @@
 
       /* スライドショー部分 */
       .slideshow-container {
-        width: 110%;  /* スライドショーを画面幅に合わせる */
+        width: 100%;  /* スライドショーを画面幅に合わせる */
         position: relative;
         overflow: hidden; /* 画像がはみ出さないように */
         margin: 0 auto;  /* 中央に配置 */
@@ -85,9 +85,10 @@
         border: 2px solid #cccccc;
         transition: all 0.3s ease;
         display: inline-block;
-        width: 15%; /* ボタンの幅を横いっぱいに広げる */
+        width: 18%; /* ボタンの幅を横いっぱいに広げる */
         height: 80px; /* ボタンの高さ */
         line-height: 80px; /* 文字を中央に配置 */
+        white-space: nowrap; /* ボタン内で文字が折り返さないように */
       }
 
       .button:hover {
@@ -106,6 +107,7 @@
         color: #333333;
         max-width: 900px;
         margin: 20px auto;
+        line-height: 1.5; /* 行間を詰めて表示 */
       }
 
       /* プロフィール画像のスタイル */
@@ -141,7 +143,7 @@
 
     <div class="button-container">
       <a href="javascript:void(0);" class="button" onclick="toggleSection('plan')">Plan</a>
-      <a href="javascript:void(0);" class="button" onclick="toggleSection('about-me')">Photography</a>
+      <a href="javascript:void(0);" class="button" onclick="toggleSection('about-me')">About Me</a>
       <a href="javascript:void(0);" class="button" onclick="toggleSection('contact')">Contact</a>
       <a href="photo.html" class="button">Photo</a>
       <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="button">Instagram</a>
@@ -192,7 +194,7 @@
 
     <!-- About Me セクション -->
     <div id="about-me" class="about-me-content">
-      <h3>Photography</h3>
+      <h3>About Me</h3>
       <p>ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
       <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
 
