@@ -55,7 +55,7 @@
         display: flex;
         justify-content: center;
         margin-top: 20px; /* メニューとスライドショーの間隔を詰める */
-        flex-wrap: nowrap; /* メニュー項目が折り返さないように設定 */
+        flex-wrap: wrap; /* 画面幅が狭くなったときに項目が折り返される */
       }
 
       nav a {
@@ -91,16 +91,6 @@
         object-fit: cover;
         display: block;
         margin: 0 auto;
-      }
-
-      /* 画像の縁をぼかす */
-      .mySlides img {
-        filter: blur(15px); /* 画像全体をぼかす */
-        transition: filter 0.5s ease-in-out; /* ぼかしの切り替えを滑らかに */
-      }
-
-      .slideshow-container:hover .mySlides img {
-        filter: blur(0); /* ホバー時にぼかしを解除 */
       }
 
       /* ボタン */
@@ -225,7 +215,7 @@
     </header>
 
     <!-- インスタグラムアイコン -->
-    <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="insta-icon"></a>
+    <a href="https://www.instagram.com/photo.uk7/" target="_blank" class="insta-icon"></a>
 
     <!-- メニュー -->
     <nav>
@@ -296,16 +286,16 @@
     <!-- About Me セクション -->
     <div id="about-me" class="content">
       <h3>About Me</h3>
-      <p>こんにちは、ロンドン在住のMakoです。2024年1月からロンドンに住み、特別な瞬間を写真に収めるサービスを始めました。撮影依頼やご相談は、メールでお気軽にお問い合わせください。</p>
-      <p>Hello, I’m Mako, a London-based photographer. I specialize in capturing special moments across London and Europe. I started my photography journey in January 2024 and have been dedicated to creating meaningful memories for each person I work with.</p>
-      <p>For bookings or inquiries, feel free to reach out via email at <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+      <p>こんにちは、ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+      <p>Hello, I’m Mako, a London-based photographer. I specialize in capturing special moments across London and Europe.</p>
     </div>
 
     <!-- Contact セクション -->
     <div id="contact" class="content">
       <h3>Contact</h3>
-      <p>お気軽に<a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a>までご連絡ください。</p>
-      <p>お客様との大切な時間を一緒に作り上げることを楽しみにしています。</p>
+      <p><a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+      <p>お気軽にお問い合わせください。</p>
+      <p>For bookings or inquiries, feel free to reach out via email.</p>
     </div>
 
     <script>
