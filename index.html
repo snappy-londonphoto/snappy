@@ -162,6 +162,19 @@
         margin-top: 20px;
       }
 
+      /* インスタグラムアイコンの位置 */
+      .insta-icon {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-image: url('https://github.com/snappy-londonphoto/snappy/blob/f072fe0c9ef379cac4bb72dce6cf780becbac7fc/insta_icon.avif?raw=true');
+        background-size: cover;
+        background-position: center;
+      }
+
       /* レスポンシブデザイン */
       @media (max-width: 768px) {
         header .logo {
@@ -180,6 +193,14 @@
         .content p {
           font-size: 16px;
         }
+
+        /* モバイルの場合のインスタグラムアイコン位置 */
+        .insta-icon {
+          position: absolute;
+          top: 10px;
+          left: 50%;
+          transform: translateX(-50%);
+        }
       }
     </style>
   </head>
@@ -190,6 +211,9 @@
       <div class="logo">Snappy Film</div>
       <div class="location">Based in London</div>
     </header>
+
+    <!-- インスタグラムアイコン -->
+    <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="insta-icon"></a>
 
     <!-- メニュー -->
     <nav>
