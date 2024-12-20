@@ -72,7 +72,7 @@
         background-color: #B2AB9F;
         color: white;
         padding: 20px;
-        border-radius: 0; /* 正円ではなくシンプルな長方形 */
+        border-radius: 0;
         text-align: center;
         text-decoration: none;
         font-size: 20px; /* フォントサイズ調整 */
@@ -80,12 +80,13 @@
         border: 2px solid #cccccc;
         display: block;
         transition: all 0.3s ease;
-        margin: 15px 0;
-        width: 250px; /* ボタンの横幅統一 */
+        margin: 10px 5px;
+        width: 100%; /* ボタンが横幅いっぱいに広がる */
         height: 60px; /* ボタンの高さ */
         line-height: 60px; /* ボタン内の文字を中央に配置 */
-        margin-left: auto;
-        margin-right: auto;
+        position: absolute; /* ボタンをスライドショー画像の下に固定 */
+        bottom: 20px; /* スライドショーの下部に配置 */
+        left: 0;
       }
 
       .button:hover {
@@ -95,15 +96,17 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
-      /* ボタンを縦一列に並べる */
+      /* ボタンを横一列に並べる */
       .contact-links {
-        display: block;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         margin-top: 20px;
-        text-align: center;
       }
 
       .contact-links .button {
-        margin-bottom: 20px; /* ボタン間の余白 */
+        width: calc(100% / 5 - 20px); /* ボタンを横一列で5つ並べる */
+        margin: 10px;
       }
 
       /* セクションの非表示 */
@@ -137,10 +140,14 @@
       /* レスポンシブ対応 */
       @media only screen and (max-width: 768px) {
         .button {
-          width: 200px;
+          width: calc(100% - 20px); /* モバイル用にボタンを全幅に調整 */
           height: 50px;
           line-height: 50px;
-          font-size: 16px; /* モバイル用にフォントサイズを調整 */
+          font-size: 16px;
+        }
+
+        .contact-links .button {
+          width: calc(100% - 20px); /* モバイルでもボタンは横幅いっぱい */
         }
       }
     </style>
@@ -148,7 +155,7 @@
 
   <body>
     <div class="header">
-      <h1>London Photography</h1>
+      <h1 onclick="resumeSlideshow()">London Photography</h1>
       <p>Capturing special moments in London and across Europe</p>
     </div>
 
@@ -220,13 +227,15 @@
     <!-- About Me セクション -->
     <div id="about-me" class="about-me-content">
       <h3>About Me</h3>
-      <p>ロンドン在住のフォトグラファーMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
-      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+      <p>イギリス ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。特別な瞬間を写真に収め、心を込めてお届けします。</p>
+      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p><br>
 
+      
       <!-- プロフィール画像 -->
       <img class="profile-img" src="https://github.com/snappy-londonphoto/snappy/blob/c7f60f3e264a9b58d37871f8ed3bcb25d933d651/profile2.png?raw=true" alt="Mako's Profile Image">
     </div>
 
+    
     <!-- Contact セクション -->
     <div id="contact" class="contact-content">
       <h3>Contact</h3>
@@ -236,6 +245,35 @@
     </div>
 
     <script>
+      let slideIndex = 0;
+      let slideInterval;
+
+      function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex - 1].style.display = "block";
+      }
+
+      function startSlideshow() {
+        slideInterval = setInterval(showSlides, 3000); // 3秒ごとにスライド
+      }
+
+      function stopSlideshow() {
+        clearInterval(slideInterval); // スライドショーを停止
+      }
+
+      function resumeSlideshow() {
+        stopSlideshow();
+        startSlideshow(); // ヘッダーをクリックしてスライドショー再開
+      }
+
+      // 初期状態でスライドショーを開始
+      startSlideshow();
+
       // セクションの表示切り替え
       function toggleSection(sectionId) {
         const sections = ['plan', 'about-me', 'contact'];
@@ -247,23 +285,8 @@
             element.style.display = 'none';
           }
         });
+        stopSlideshow(); // ボタンを押したらスライドショー停止
       }
-
-      // スライドショーのスクリプト
-      let slideIndex = 0;
-
-      function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // 3秒ごとにスライド
-      }
-
-      showSlides();
     </script>
   </body>
 </html>
