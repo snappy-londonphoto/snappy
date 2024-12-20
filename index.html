@@ -67,25 +67,24 @@
 
       /* ボタンの基本スタイル */
       .button {
-        background-color: #ffffff; /* 白背景 */
-        color: #333333; /* ダークグレー */
-        padding: 12px 25px;
-        border-radius: 50px; /* 丸みを帯びたデザイン */
+        background-color: #B2AB9F; /* ボタンの背景色 */
+        color: white; /* 文字の色 */
+        padding: 20px; /* ボタンのサイズを大きく */
+        border-radius: 50%; /* 完全な丸いボタン */
         text-align: center;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 22px; /* 太めの文字 */
         border: 2px solid #cccccc; /* グレーのボーダー */
         display: inline-block;
         transition: all 0.3s ease;
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin: 0 10px; /* ボタン間にスペース */
       }
 
       /* ボタンホバー時 */
       .button:hover {
-        background-color: #5a9bd5; /* 穏やかなブルー */
-        color: #ffffff; /* 白文字 */
-        border: 2px solid #5a9bd5;
+        background-color: #696156; /* 押したときの色 */
+        color: white; /* 文字色 */
+        border: 2px solid #696156;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボタンに軽い影を追加 */
       }
 
@@ -123,27 +122,6 @@
         gap: 10px; /* ボタン間に均等なスペース */
       }
 
-      .contact-links a {
-        display: inline-block;
-        background-color: #ffffff;
-        color: #333333;
-        padding: 12px 25px;
-        border-radius: 50%; /* 丸いボタンに */
-        text-align: center;
-        text-decoration: none;
-        font-size: 18px;
-        border: 2px solid #cccccc;
-        transition: all 0.3s ease;
-        margin: 0 10px; /* ボタン間にスペースを追加 */
-      }
-
-      .contact-links a:hover {
-        background-color: #5a9bd5;
-        color: #ffffff;
-        border: 2px solid #5a9bd5;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      }
-
       /* About Me セクションの非表示 */
       .about-me-content {
         display: none;
@@ -154,8 +132,8 @@
       }
 
       .about-me-content img {
-        width: 50px;
-        height: 50px;
+        width: 100px; /* プロフィール画像を少し大きく */
+        height: 100px; 
         border-radius: 50%;
         margin-right: 15px;
         vertical-align: middle;
@@ -200,7 +178,7 @@
     </div>
 
     <div id="about-me" class="about-me-content">
-      <img src="https://via.placeholder.com/50" alt="MAKO">
+      <img src="https://via.placeholder.com/100" alt="MAKO"> <!-- プロフィール画像を大きく -->
       <div>
         <p><strong>MAKO</strong></p>
         <p>ロンドン在住のフォトグラファーMAKOです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
