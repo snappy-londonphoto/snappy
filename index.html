@@ -27,13 +27,11 @@
       /* ヘッダー部分 */
       .header {
         background-color: #D2C9BE;
-        padding: 70px 20px; /* 高さはそのまま */
+        padding: 50px 20px;
         text-align: center;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 100%;  /* 幅を100%に設定 */
+        width: 100%;
         box-sizing: border-box;
-        background-size: cover;  /* 背景画像が親要素に合わせて拡大 */
-        background-position: center center; /* 背景の位置を中央に設定 */
       }
 
       .header h1 {
@@ -51,44 +49,38 @@
         margin-bottom: 0;
       }
 
-      /* スライドショー部分 */
+      /* スライドショーの親要素 */
       .slideshow-container {
-        width: 100%;  /* スライドショーを画面幅に合わせる */
+        width: 100%; /* 幅をページに合わせる */
         position: relative;
-        overflow: hidden; /* 画像がはみ出さないように */
-        margin: 0 auto;  /* 中央に配置 */
+        overflow: hidden; /* はみ出さないように */
+        margin: 0 auto; /* 中央に配置 */
+        padding: 0; /* 余分なパディングがないか確認 */
+        box-sizing: border-box; /* パディングやボーダーを幅に含める */
       }
 
+      /* 各スライド画像 */
       .mySlides img {
-        width: 100%; /* 画像の幅を画面幅に合わせる */
+        width: 100%;  /* 画像の幅を親要素に合わせる */
         height: auto; /* 高さは自動で調整 */
+        max-width: 100%; /* 画像がはみ出さないように */
+        display: block; /* 余分な隙間をなくす */
       }
 
-      /* ボタンのスタイル */
-      .button-container {
-        display: flex;
-        justify-content: space-between; /* 横いっぱいに広げる */
-        margin-top: 30px; /* 画像とボタンの間隔を設定 */
-        gap: 20px; /* ボタン同士の間隔 */
-        padding: 0 10%; /* 横に少し余白を取る */
-      }
-
+      /* ボタンの基本スタイル */
       .button {
         background-color: #B2AB9F;
         color: white;
-        padding: 25px;
+        padding: 20px 40px;
         border-radius: 50%;
         text-align: center;
         text-decoration: none;
         font-size: 18px;
         font-weight: bold;
         border: 2px solid #cccccc;
-        transition: all 0.3s ease;
         display: inline-block;
-        width: 18%; /* ボタンの幅を横いっぱいに広げる */
-        height: 80px; /* ボタンの高さ */
-        line-height: 80px; /* 文字を中央に配置 */
-        white-space: nowrap; /* ボタン内で文字が折り返さないように */
+        transition: all 0.3s ease;
+        margin: 15px 10px;
       }
 
       .button:hover {
@@ -96,6 +88,18 @@
         color: white;
         border: 2px solid #696156;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ボタンの横並びと中央配置 */
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-top: 20px;
+      }
+
+      .contact-links .button {
+        margin-right: 15px;
       }
 
       /* セクションの非表示 */
@@ -107,7 +111,6 @@
         color: #333333;
         max-width: 900px;
         margin: 20px auto;
-        line-height: 1.5; /* 行間を詰めて表示 */
       }
 
       /* プロフィール画像のスタイル */
@@ -141,7 +144,7 @@
       </div>
     </div>
 
-    <div class="button-container">
+    <div class="contact-links">
       <a href="javascript:void(0);" class="button" onclick="toggleSection('plan')">Plan</a>
       <a href="javascript:void(0);" class="button" onclick="toggleSection('about-me')">About Me</a>
       <a href="javascript:void(0);" class="button" onclick="toggleSection('contact')">Contact</a>
@@ -195,7 +198,7 @@
     <!-- About Me セクション -->
     <div id="about-me" class="about-me-content">
       <h3>About Me</h3>
-      <p>ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+      <p>ロンドン在住のフォトグラファーMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
       <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
 
       <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
@@ -237,7 +240,7 @@
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // 3秒ごとに切り替え
+        setTimeout(showSlides, 3000); // 3秒ごとにスライド
       }
 
       showSlides();
