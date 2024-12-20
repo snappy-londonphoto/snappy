@@ -1,0 +1,32 @@
+@media (max-width: 1024px) {
+  .responsive-container-block.Container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .responsive-container-block.leftSide {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .responsive-container-block.rightSide {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-blk.heading {
+    font-size: 28px;
+  }
+
+  .text-blk.subHeading {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-image {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
