@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>   
+  <meta charset="utf-8">
+  <title>PHOTOLIFE</title>
+  <link rel="stylesheet" href="Street.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+</head>
+
+<body> 
+  <div class="container">
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title header-title">
+          <a href="index.html">PHOTOLIFE</a>
+        </h1>
+
+        <nav class="header__nav nav" id="js-nav">
+          <ul class="nav__items nav-items">
+            <li class="nav-items__item"><a href="Street.html">Tall</a></li>
+            <li class="nav-items__item"><a href="People.html">Wide</a></li>
+            <li class="nav-items__item"><a href="https://instagram.com/sota7321?igshid=OGQ5ZDc2ODk2ZA%3D%3D&utm_source=qr">Instagram</a></li>
+          </ul>
+        </nav>
+
+        <button class="header__hamburger hamburger" id="js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    
+    <main>
+      <div class="body-img">
+        <a href="https://github.com/fleap0817/photolife/raw/main/slide4.JPG" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/raw/main/slide4.JPG" alt="Image 1">
+        </a>
+    
+        <a href="https://github.com/fleap0817/photolife/raw/main/slide10.JPG" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/raw/main/slide10.JPG" alt="Image 3">
+        </a>
+    
+        <a href="https://github.com/fleap0817/photolife/raw/main/slide9.JPG" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/raw/main/slide9.JPG" alt="Image 5">
+        </a>
+    
+        <a href="https://github.com/fleap0817/photolife/raw/main/slide7.JPG" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/raw/main/slide7.JPG" alt="Image 7">
+        </a>
+    
+        <a href="https://github.com/fleap0817/photolife/raw/main/slide5.JPG" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/raw/main/slide5.JPG" alt="Image 8">
+        </a>
+    
+        <a href="https://github.com/fleap0817/photolife/raw/main/slide11.JPG" data-lightbox="group">
+          <img src="https://github.com/fleap0817/photolife/raw/main/slide11.JPG" alt="Image 11">
+        </a>
+      </div>
+    </main>
+
+    <script>
+      $(document).ready(function() {
+        const ham = $('#js-hamburger');
+        const nav = $('#js-nav');
+        
+        ham.on('click', function () { //ハンバーガーメニューをクリックしたら
+          ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
+          nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+        });
+      });
+    </script>
+  </div>
+</body>
+</html>
