@@ -32,6 +32,7 @@
         padding: 20px 0;
         text-align: center;
         z-index: 100;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
       }
 
       header .logo {
@@ -41,6 +42,7 @@
         font-weight: bold;
         letter-spacing: 1px;
         text-transform: uppercase;
+        transition: opacity 0.3s ease;
       }
 
       header .location {
@@ -208,12 +210,39 @@
           transform: translateX(-50%);
         }
       }
+
+      /* 半透明の追従ヘッダー */
+      .fixed-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(210, 201, 190, 0.9); /* 半透明 */
+        z-index: 1000;
+        opacity: 0.9;
+        padding: 20px 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .fixed-header .logo {
+        color: #333;
+        font-size: 48px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: opacity 0.3s ease;
+      }
+
+      .fixed-header.scrolled {
+        opacity: 1; /* スクロール後は完全不透明 */
+      }
+
     </style>
   </head>
 
   <body>
     <!-- ヘッダー -->
-    <header>
+    <header id="header">
       <div class="logo">Snappy Film</div>
       <div class="location">Based in London</div>
     </header>
@@ -320,6 +349,16 @@
       }
 
       showSlides();
+
+      // スクロール時の透明度変更
+      window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
     </script>
   </body>
 </html>
