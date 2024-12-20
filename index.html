@@ -10,23 +10,23 @@
     <style>
       /* 全体の背景色とテキスト色 */
       body {
-        background-color: #EBE8E2; /* 優しいベージュ背景 */
-        color: #333333; /* ダークグレー */
-        font-family: 'Cormorant Garamond', serif; /* 英語フォント */
+        background-color: #EBE8E2;
+        color: #333333;
+        font-family: 'Cormorant Garamond', serif;
         margin: 0;
         padding: 0;
-        text-align: center; /* 中央寄せ */
+        text-align: center;
         box-sizing: border-box;
       }
 
       /* 日本語フォントの指定 */
       p, li, h1, h3 {
-        font-family: 'Noto Serif Japanese', serif; /* 日本語フォント */
+        font-family: 'Noto Serif Japanese', serif;
       }
 
       /* ヘッダー部分 */
       .header {
-        background-color: #D2C9BE; /* やわらかいベージュ */
+        background-color: #D2C9BE;
         padding: 50px 20px;
         text-align: center;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -37,70 +37,57 @@
       .header h1 {
         font-size: 48px;
         font-weight: bold;
-        color: #333333; /* ダークグレー */
+        color: #333333;
         letter-spacing: 1px;
         margin: 0;
       }
 
       .header p {
         font-size: 18px;
-        color: #888888; /* 明るめのグレー */
+        color: #888888;
         margin-top: 10px;
         margin-bottom: 0;
       }
 
-      /* 流れるテキスト部分 */
-      .bbs {
-        background-color: #EBE8E2; /* サイト全体と同じ背景色 */
-        padding: 20px;
-        font-size: 20px;
-        color: #333333;
-        max-width: 1200px;
-        margin: 20px auto;
-        font-family: 'Montserrat', sans-serif;
-      }
-
-      /* ギャラリーのセクション */
-      .container {
-        background-color: #D2C9BE; /* やわらかいベージュ */
-        padding: 40px 20px;
-        margin-top: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        max-width: 1200px;
-        margin: 20px auto;
-      }
-
       /* ボタンの基本スタイル */
       .button {
-        background-color: #B2AB9F; /* ボタンの背景色 */
-        color: white; /* 文字の色 */
-        padding: 25px; /* ボタンのサイズを大きく */
-        border-radius: 50%; /* 完全な丸いボタン */
+        background-color: #B2AB9F;
+        color: white;
+        padding: 25px;
+        border-radius: 50%;
         text-align: center;
         text-decoration: none;
-        font-size: 24px; /* 太めの文字 */
-        font-weight: bold; /* 太い文字 */
-        border: 2px solid #cccccc; /* グレーのボーダー */
+        font-size: 24px;
+        font-weight: bold;
+        border: 2px solid #cccccc;
         display: inline-block;
         transition: all 0.3s ease;
-        margin: 15px 10px; /* ボタン間にスペース */
+        margin: 15px 10px;
       }
 
-      /* ボタンホバー時 */
       .button:hover {
-        background-color: #696156; /* 押したときの色 */
-        color: white; /* 文字色 */
+        background-color: #696156;
+        color: white;
         border: 2px solid #696156;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボタンに軽い影を追加 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
 
-      /* スライドショーの画像の調整 */
+      /* セクションの非表示 */
+      .plan-content, .about-me-content {
+        display: none;
+        margin-top: 20px;
+        text-align: left;
+        font-size: 18px;
+        color: #333333;
+        max-width: 900px;
+        margin: 20px auto;
+      }
+
+      /* スライドショーのスタイル */
       .slideshow-container {
         position: relative;
         max-width: 100%;
-        margin: 40px auto; /* スライドショーの上部と下部にスペース */
-        display: block;
+        margin: 40px auto;
       }
 
       .mySlides {
@@ -111,18 +98,6 @@
         width: 100%;
         border-radius: 8px;
         height: auto;
-        margin-bottom: 20px; /* 画像の下にスペース */
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      footer {
-        background-color: #C3BBB0; /* 中間トーンのベージュ */
-        padding: 20px;
-        text-align: center;
-        max-width: 1200px;
-        margin: 20px auto;
       }
     </style>
   </head>
@@ -147,19 +122,55 @@
       </div>
     </div>
 
-    <!-- ボタン -->
-    <div>
-      <a href="#" class="button">Button 1</a>
-      <a href="#" class="button">Button 2</a>
-      <a href="#" class="button">Button 3</a>
+    <div class="contact-links">
+      <h3>Contact</h3>
+      <a href="javascript:void(0);" class="button" onclick="toggleSection('plan')">Plan</a>
+      <a href="javascript:void(0);" class="button" onclick="toggleSection('about-me')">About Me</a>
+      <a href="photo.html" class="button">Photo</a>
+      <a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a>
+      <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank" class="button">Instagram</a>
     </div>
 
-    <footer>
-      <!-- フッター部分 -->
-      &copy; 2024 London Photography. All rights reserved.
-    </footer>
+    <!-- Plan セクション -->
+    <div id="plan" class="plan-content">
+      <h3>Plan</h3>
+      <h4>01 / ショートプラン</h4>
+      <ul>
+        <li>所要時間：約30分</li>
+        <li>納品枚数：10枚〜</li>
+        <li>料金：£30</li>
+      </ul>
+
+      <h4>02 / スタンダードプラン</h4>
+      <ul>
+        <li>所要時間：約1時間</li>
+        <li>納品枚数：30枚〜</li>
+        <li>料金：£50</li>
+        ※終日撮影や動画撮影をご希望の場合も、ぜひご相談ください。
+      </ul>
+    </div>
+
+    <!-- About Me セクション -->
+    <div id="about-me" class="about-me-content">
+      <h3>About Me</h3>
+      <p>ロンドン在住のフォトグラファーMAKOです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
+      <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+    </div>
 
     <script>
+      // セクションの表示切り替え
+      function toggleSection(sectionId) {
+        const sections = ['plan', 'about-me'];
+        sections.forEach(id => {
+          const element = document.getElementById(id);
+          if (id === sectionId) {
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+          } else {
+            element.style.display = 'none';
+          }
+        });
+      }
+
       // スライドショーのスクリプト
       let slideIndex = 0;
 
@@ -170,7 +181,7 @@
         }
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
+        slides[slideIndex - 1].style.display = "block";
         setTimeout(showSlides, 3000); // 3秒ごとに切り替え
       }
 
