@@ -1,78 +1,67 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head>   
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="about.css">
+  <title>M's Film</title>
+  <link rel="stylesheet" href="stylesheet.css">
 </head>
-<body>
+
+<body> 
   <div class="container">
-    <!-- Header -->
     <header class="header">
       <div class="header__inner">
-        <h1 class="header__title">
-          <a href="index.html">SNAPPY</a>
+        <h1 class="header__title header-title">
+          <a href="pagetitle">SNAPPY</a>
         </h1>
 
-        <!-- Hamburger Menu -->
-        <button class="header__hamburger" id="js-hamburger">
+        <nav class="header__nav nav" id="js-nav">
+          <ul class="nav__items nav-items">
+            <li class="nav-items__item"><a href="about.html">About Me</a></li>
+            <li class="nav-items__item"><a href="plan.html">Plan</a></li>
+            <li class="nav-items__item"><a href="gallery.html">Gallery</a></li>
+            <li class="nav-items__item"><a href="contact.html">Contact</a></li>
+            <li class="nav-items__item">
+              <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank">Instagram</a>
+            </li>
+          </ul>
+        </nav>
+
+        <button class="header__hamburger hamburger" id="js-hamburger">
           <span></span>
           <span></span>
           <span></span>
         </button>
       </div>
-
-      <!-- Navigation -->
-      <nav class="header__nav" id="js-nav">
-        <ul class="nav__items">
-          <li class="nav-items__item"><a href="about.html">About Me</a></li>
-          <li class="nav-items__item"><a href="plan.html">Plan</a></li>
-          <li class="nav-items__item"><a href="gallery.html">Gallery</a></li>
-          <li class="nav-items__item"><a href="contact.html">Contact</a></li>
-          <li class="nav-items__item">
-            <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank">Instagram</a>
-          </li>
-        </ul>
-      </nav>
     </header>
-
-    <!-- Main Content -->
+    
     <main>
-      <section class="about-title-section">
-        <h2 class="about-title">About Me</h2>
-      </section>
+      <!-- 画像 -->
+      <div class="image-container">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/a7fb7c5240a987621761958df63d0941e4723e6f/bicycle.jpg?raw=true" alt="Bicycle Image" style="width:100%">
+      </div>
 
-      <section class="about-image-section">
-        <img 
-          src="https://github.com/snappy-londonphoto/snappy/blob/e27294e0e20f8bfffc8c95b1e7febac4d96bbc6d/bicycle.jpg?raw=true" 
-          alt="Bicycle Image" 
-          class="about-image">
-      </section>
-
-      <section class="about-text-section">
-        <p class="about-text">
-          <strong>MAKO</strong><br><br>
-          2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。<br>
-          日々の日常や特別な日を写真に収め、心を込めてお届けします。<br>
-          撮影依頼やご相談はお気軽にメールでお問い合わせください。<br><br>
-          ロンドンやイギリス国内、ヨーロッパ圏内の撮影ご依頼も承っております。
-        </p>
-      </section>
+      <!-- 画像の下に追加するテキスト -->
+      <div class="text-container" style="text-align: center; margin-top: 20px; font-size: 14px; color: #888;">
+        <p><strong>MAKO</strong></p>
+        <p>2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
+        <p>日々の日常や特別な日を写真に収め、心を込めてお届けします。</p>
+        <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+        <p>ロンドンやイギリス国内、ヨーロッパ圏内の撮影ご依頼も承っております。</p>
+      </div>
     </main>
-  </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      const ham = $('#js-hamburger');
-      const nav = $('#js-nav');
-      
-      ham.on('click', function () { // ハンバーガーメニューをクリックしたら
-        ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
-        nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const ham = $('#js-hamburger');
+        const nav = $('#js-nav');
+        
+        ham.on('click', function () { //ハンバーガーメニューをクリックしたら
+          ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
+          nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+        });
       });
-    });
-  </script>
+    </script>
+  
 </body>
 </html>
