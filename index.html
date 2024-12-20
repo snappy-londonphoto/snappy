@@ -33,62 +33,55 @@
     <main>
       <div class="slideshow-container">
         <div class="mySlides">
-          <img src="https://github.com/fleap0817/photolife/blob/main/slide4.JPG?raw=true" style="width:100%">
+          <img src="https://github.com/snappy-londonphoto/snappy/blob/be1766702ea8ae6112d91b02837037c5f0335d57/bigben2%EF%BC%88%E5%A4%A7%EF%BC%89.jpeg?raw=true" style="width:100%">
         </div>
 
         <div class="mySlides">
-          <img src="https://github.com/fleap0817/photolife/blob/main/slide5.JPG?raw=true" style="width:100%">
+          <img src="https://github.com/snappy-londonphoto/snappy/blob/be1766702ea8ae6112d91b02837037c5f0335d57/bigben1.JPG?raw=true" style="width:100%">
         </div>
 
         <div class="mySlides">
-          <img src="https://github.com/fleap0817/photolife/blob/main/slide7.JPG?raw=true" style="width:100%">
+          <img src="https://github.com/snappy-londonphoto/snappy/blob/be1766702ea8ae6112d91b02837037c5f0335d57/londoneye1.JPG?raw=true" style="width:100%">
         </div>
 
         <div class="mySlides">
-          <img src="https://github.com/fleap0817/photolife/blob/main/slide9.JPG?raw=true" style="width:100%">
+          <img src="https://github.com/snappy-londonphoto/snappy/blob/be1766702ea8ae6112d91b02837037c5f0335d57/londoneye3.jpeg?raw=true" style="width:100%">
         </div>
-
-        <div class="mySlides">
-          <img src="https://github.com/fleap0817/photolife/blob/main/slide10.JPG?raw=true" style="width:100%">
-        </div>
-
-        <div class="mySlides">
-          <img src="https://github.com/fleap0817/photolife/blob/main/slide11.JPG?raw=true" style="width:100%">
-        </div>
+      </div>
     </main>
    
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
-      const ham = $('#js-hamburger');
-      const nav = $('#js-nav');
-      
-      ham.on('click', function () { //ハンバーガーメニューをクリックしたら
-        ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
-        nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        const ham = $('#js-hamburger');
+        const nav = $('#js-nav');
+        
+        ham.on('click', function () { //ハンバーガーメニューをクリックしたら
+          ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
+          nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+        });
       });
-    });
 
-    // スライドショー設定
-    var slideIndex = 0;
-    showSlides();
+      // スライドショー設定
+      var slideIndex = 0;
+      showSlides();
 
-    function showSlides() {
-      var i;
-      var slides = document.getElementsByClassName("mySlides");
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+      function showSlides() {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 5000); // Change image every 5 seconds
       }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      slides[slideIndex-1].style.display = "block";
-      setTimeout(showSlides, 5000); // Change image every 5 seconds
-    }
 
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-  </script>
+      function plusSlides(n) {
+        showSlides(slideIndex += n);
+      }
+    </script>
   
 </body>
 </html>
