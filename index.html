@@ -2,6 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ビューポートの設定 -->
     <title>London Photo</title>
     <link rel="stylesheet" href="stylesheet.css">
     <link rel="stylesheet" href="textflow.css">
@@ -53,26 +54,35 @@
       .button {
         background-color: #B2AB9F;
         color: white;
-        padding: 50px; /* ボタンを大きく */
+        padding: 30px; /* ボタンのパディング調整 */
         border-radius: 50%; /* 正円にする */
         text-align: center;
         text-decoration: none;
-        font-size: 24px;
+        font-size: 16px; /* テキストのフォントサイズ調整 */
         font-weight: bold;
         border: 2px solid #cccccc;
         display: inline-block;
         transition: all 0.3s ease;
         margin: 15px 10px;
-        line-height: 100px; /* ボタン内のテキストを中央に配置 */
+        line-height: 50px; /* テキストの縦位置調整 */
         width: 100px; /* 幅を指定 */
         height: 100px; /* 高さを指定 */
       }
 
+      /* ボタンのホバー効果 */
       .button:hover {
         background-color: #696156;
         color: white;
         border: 2px solid #696156;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* ボタンを横並びにする */
+      .contact-links {
+        display: flex;
+        flex-wrap: wrap; /* スマホでも横に並べる */
+        justify-content: center; /* ボタンを中央に配置 */
+        margin-top: 20px;
       }
 
       /* セクションの非表示 */
@@ -93,6 +103,22 @@
         border-radius: 50%;
         margin-top: 20px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* レスポンシブデザイン（モバイル向け） */
+      @media (max-width: 600px) {
+        .button {
+          width: 80px; /* モバイルでボタンを少し小さく */
+          height: 80px; /* 同じく高さを調整 */
+          font-size: 14px; /* フォントサイズ調整 */
+          padding: 20px; /* パディング調整 */
+        }
+        .header h1 {
+          font-size: 36px; /* ヘッダーのフォントサイズ調整 */
+        }
+        .header p {
+          font-size: 16px; /* ヘッダーの説明文フォントサイズ調整 */
+        }
       }
     </style>
   </head>
@@ -202,22 +228,6 @@
           }
         });
       }
-
-      // スライドショーのスクリプト
-      let slideIndex = 0;
-
-      function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // 3秒ごとに切り替え
-      }
-
-      showSlides();
     </script>
   </body>
 </html>
