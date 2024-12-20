@@ -136,6 +136,23 @@
         border: 2px solid #5a9bd5;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
+
+      /* About Me セクションの非表示 */
+      .about-me-content {
+        display: none;
+        margin-top: 20px;
+        text-align: left;
+        font-size: 18px;
+        color: #333333;
+      }
+
+      .about-me-content img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        vertical-align: middle;
+      }
     </style>
   </head>
 
@@ -169,9 +186,21 @@
 
     <div class="contact-links">
       <h3>Contact</h3>
+      <p><a href="javascript:void(0);" class="button" onclick="toggleAboutMe()">About Me</a></p>
       <p><a href="https://github.com/snappy-londonphoto/snappy/blob/123086a77f7b17898caa7650cc8b73cccc23052f/index%20works.html" class="button">Photo</a></p>
       <p><a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a></p>
       <p><a href="https://www.instagram.com/snappy_londonphoto" target="_blank" class="button">Instagram</a></p>
+    </div>
+
+    <div id="about-me" class="about-me-content">
+      <img src="https://via.placeholder.com/50" alt="MAKO">
+      <div>
+        <p><strong>MAKO</strong></p>
+        <p>ロンドン在住のフォトグラファーMAKOです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
+        <p><strong>Email:</strong> <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+        <br>
+        <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
+      </div>
     </div>
 
     <footer class="footer">
@@ -195,6 +224,16 @@
       }
 
       showSlides();
+
+      // About Meの表示/非表示を切り替える関数
+      function toggleAboutMe() {
+        let aboutMeSection = document.getElementById('about-me');
+        if (aboutMeSection.style.display === 'none' || aboutMeSection.style.display === '') {
+          aboutMeSection.style.display = 'block';
+        } else {
+          aboutMeSection.style.display = 'none';
+        }
+      }
     </script>
   </body>
 </html>
