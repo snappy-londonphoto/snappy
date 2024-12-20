@@ -24,14 +24,14 @@
 
       /* ヘッダー */
       header {
-        position: fixed;
+        position: relative;
         top: 0;
         left: 0;
         width: 100%;
         background-color: #D2C9BE;
         padding: 20px 0;
+        text-align: center;
         z-index: 100;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
 
       header .logo {
@@ -54,25 +54,22 @@
       nav {
         text-align: center;
         margin-top: 40px;
-        position: fixed;
-        top: 100px;
-        width: 100%;
-        background-color: #D2C9BE;
-        z-index: 200;
-        padding: 10px 0;
       }
 
       nav a {
         text-decoration: none;
         color: #333;
-        font-size: 16px;
+        font-size: 20px;  /* PLANに合わせたフォントサイズ */
         margin: 0 20px;
         text-transform: uppercase;
         font-weight: bold;
+        display: inline-block;
+        padding-bottom: 5px;
       }
 
       nav a:hover {
         color: #B2AB9F;
+        border-bottom: 2px solid #B2AB9F;  /* ホバー時に下線を表示 */
       }
 
       /* スライドショー */
@@ -173,7 +170,7 @@
         }
 
         nav a {
-          font-size: 14px;
+          font-size: 16px;
         }
       }
     </style>
@@ -188,11 +185,11 @@
 
     <!-- メニュー -->
     <nav>
-      <a href="#home">Home</a>
-      <a href="#about-me">About Me</a>
-      <a href="#plan">Plan</a>
-      <a href="photo-gallery.html" target="_blank">Photo Gallery</a> <!-- リンク先のページ -->
-      <a href="#contact">Contact</a>
+      <a href="#home">HOME</a>
+      <a href="#plan">PLAN</a>
+      <a href="#about-me">ABOUT ME</a>
+      <a href="photo-gallery.html" target="_blank">PHOTO</a> <!-- リンク先のページ -->
+      <a href="#contact">CONTACT</a>
     </nav>
 
     <!-- スライドショー -->
@@ -212,14 +209,6 @@
     <div id="home" class="content">
       <h3>Welcome to Snappy Film</h3>
       <p>Capturing special moments in London and across Europe. For bookings and inquiries, please feel free to contact me.</p>
-    </div>
-
-    <!-- About Me セクション -->
-    <div id="about-me" class="content">
-      <h3>About Me</h3>
-      <p>こんにちは、ロンドン在住のMakoです。2024年1月からロンドンに住み、特別な瞬間を写真に収めるサービスを始めました。撮影依頼やご相談は、メールでお気軽にお問い合わせください。</p>
-      <p>Hello, I’m Mako, a London-based photographer. I specialize in capturing special moments across London and Europe. I started my photography journey in January 2024 and have been dedicated to creating meaningful memories for each person I work with.</p>
-      <p>For bookings or inquiries, feel free to reach out via email at <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
     </div>
 
     <!-- Plan セクション -->
@@ -259,6 +248,14 @@
         <li>ご自宅やお好きな場所</li>
       </ul>
       <p>交通費をお客様にご負担いただければ、ロンドン市外での撮影も承ります。ご希望の場所がございましたら、ぜひ一度ご相談ください。</p>
+    </div>
+
+    <!-- About Me セクション -->
+    <div id="about-me" class="content">
+      <h3>About Me</h3>
+      <p>こんにちは、ロンドン在住のMakoです。2024年1月からロンドンに住み、特別な瞬間を写真に収めるサービスを始めました。撮影依頼やご相談は、メールでお気軽にお問い合わせください。</p>
+      <p>Hello, I’m Mako, a London-based photographer. I specialize in capturing special moments across London and Europe. I started my photography journey in January 2024 and have been dedicated to creating meaningful memories for each person I work with.</p>
+      <p>For bookings or inquiries, feel free to reach out via email at <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
     </div>
 
     <!-- Contact セクション -->
