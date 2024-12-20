@@ -14,8 +14,8 @@
     /* 文章のスタイル */
     .text-container {
       text-align: center;
-      margin-top: 20px;
-      font-size: 18px; /* 少し大きめのフォントサイズ */
+      margin-top: 30px; /* 画像と文章の間隔をあける */
+      font-size: 18px; /* フォントサイズ */
       color: #888; /* グレー */
       line-height: 1.6;
     }
@@ -24,6 +24,20 @@
     .text-container strong {
       font-size: 20px; /* 見出し部分のフォントサイズを少し大きく */
       font-weight: bold;
+    }
+
+    /* メールアドレスのスタイル */
+    .email {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #444;
+    }
+
+    /* 英文のスタイル */
+    .english-text {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #444;
     }
   </style>
 </head>
@@ -59,16 +73,23 @@
     <main>
       <!-- ヘッダー画像 -->
       <div class="image-container">
-        <img src="https://github.com/snappy-londonphoto/snappy/blob/a7fb7c5240a987621761958df63d0941e4723e6f/bicycle.jpg?raw=true" alt="Bicycle Image" class="header-image">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/0ae40d31bb7bb0f18ca2af8547c10a49734b2b64/bicycle2.jpg?raw=true" alt="Bicycle Image" class="header-image">
       </div>
 
       <!-- 画像の下に追加するテキスト -->
       <div class="text-container">
-        <p><strong>MAKO</strong></p>
-        <p>2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
-        <p>日々の日常や特別な日を写真に収め、心を込めてお届けします。</p>
+        <p><strong>About Me</strong></p>
+        <p><strong>Mako</strong></p>
+        <p>2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。</p>
         <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
-        <p>ロンドンやイギリス国内、ヨーロッパ圏内の撮影ご依頼も承っております。</p>
+
+        <div class="email">
+          <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
+        </div>
+        
+        <div class="english-text">
+          <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
+        </div>
       </div>
     </main>
    
