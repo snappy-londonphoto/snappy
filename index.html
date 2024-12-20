@@ -27,11 +27,13 @@
       /* ヘッダー部分 */
       .header {
         background-color: #D2C9BE;
-        padding: 50px 20px;
+        padding: 70px 20px; /* 高さはそのまま */
         text-align: center;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 100%;
+        width: 100%;  /* 幅を100%に設定 */
         box-sizing: border-box;
+        background-size: cover;  /* 背景画像が親要素に合わせて拡大 */
+        background-position: center center; /* 背景の位置を中央に設定 */
       }
 
       .header h1 {
@@ -47,32 +49,6 @@
         color: #888888;
         margin-top: 10px;
         margin-bottom: 0;
-      }
-
-      /* スライドショーのスタイル */
-      .slideshow-container {
-        position: relative;
-        width: 100%;
-        height: 500px; /* 高さを指定し、画像が切れないように調整 */
-        overflow: hidden;
-        margin: 0;
-        padding: 0;
-      }
-
-      .mySlides {
-        display: none;
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
-      .mySlides img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; /* 画像をボックスに合わせてトリミング */
-        object-position: center center; /* 画像の中央を基準にして表示 */
       }
 
       /* ボタンの基本スタイル */
@@ -213,21 +189,16 @@
     </div>
 
     <script>
-      // セクションの表示切り替え
-      function toggleSection(sectionId) {
+      function toggleSection(section) {
         const sections = ['plan', 'about-me', 'contact'];
-        sections.forEach(id => {
-          const element = document.getElementById(id);
-          if (id === sectionId) {
-            element.style.display = element.style.display === 'block' ? 'none' : 'block';
-          } else {
-            element.style.display = 'none';
-          }
+        sections.forEach((sec) => {
+          document.getElementById(sec).style.display = (sec === section) ? 'block' : 'none';
         });
       }
 
-      // スライドショーのスクリプト
+      // スライドショーの画像切り替え
       let slideIndex = 0;
+      showSlides();
 
       function showSlides() {
         let slides = document.getElementsByClassName("mySlides");
@@ -236,11 +207,9 @@
         }
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex - 1].style.display = "block";
-        setTimeout(showSlides, 3000); // 3秒ごとに切り替え
+        slides[slideIndex-1].style.display = "block";
+        setTimeout(showSlides, 2000); // 2秒ごとに切り替え
       }
-
-      showSlides();
     </script>
   </body>
 </html>
