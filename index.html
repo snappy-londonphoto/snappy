@@ -30,7 +30,7 @@
         padding: 50px 20px;
         text-align: center;
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 100%;
+        width: 100%; /* 横幅100%に設定 */
         box-sizing: border-box;
       }
 
@@ -51,7 +51,7 @@
 
       /* スライドショーの親要素 */
       .slideshow-container {
-        width: 100%; /* 幅をページに合わせる */
+        width: 100%; /* 横幅100%に設定 */
         position: relative;
         overflow: hidden; /* はみ出さないように */
         margin: 0 auto; /* 中央に配置 */
@@ -71,16 +71,20 @@
       .button {
         background-color: #B2AB9F;
         color: white;
-        padding: 20px 40px;
-        border-radius: 50%;
+        padding: 20px;
+        border-radius: 50%; /* 正円 */
         text-align: center;
         text-decoration: none;
-        font-size: 18px;
+        font-size: 16px; /* フォントサイズ調整 */
         font-weight: bold;
         border: 2px solid #cccccc;
         display: inline-block;
         transition: all 0.3s ease;
         margin: 15px 10px;
+        width: 70px; /* ボタンの横幅 */
+        height: 70px; /* ボタンの高さ */
+        line-height: 70px; /* ボタン内の文字を中央に配置 */
+        text-align: center; /* ボタン内のテキストを中央揃え */
       }
 
       .button:hover {
@@ -120,6 +124,14 @@
         border-radius: 50%;
         margin-top: 20px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      /* About Me のテキスト調整 */
+      .about-me-content p {
+        line-height: 1.6;
+        max-width: 320px;
+        margin: 0 auto;
+        text-align: center;
       }
     </style>
   </head>
@@ -198,10 +210,8 @@
     <!-- About Me セクション -->
     <div id="about-me" class="about-me-content">
       <h3>About Me</h3>
-      <p>ロンドン在住のフォトグラファーMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。ロンドンでの特別な瞬間を写真に収め、心を込めてお届けします。撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
-      <p>Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
-
-      <p>Hello, I’m Mako, a London-based photographer. I capture special moments in London and across Europe. For bookings, feel free to reach out via email!</p>
+      <p>イギリス ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
+      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
 
       <!-- プロフィール画像 -->
       <img class="profile-img" src="https://github.com/snappy-londonphoto/snappy/blob/c7f60f3e264a9b58d37871f8ed3bcb25d933d651/profile2.png?raw=true" alt="Mako's Profile Image">
