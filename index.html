@@ -51,6 +51,18 @@
         margin-bottom: 0;
       }
 
+      /* スライドショー部分 */
+      .slideshow-container {
+        width: 100%;  /* スライドショーを画面幅に合わせる */
+        position: relative;
+        overflow: hidden; /* 画像がはみ出さないように */
+      }
+
+      .mySlides img {
+        width: 100%; /* 画像の幅を画面幅に合わせる */
+        height: auto; /* 高さは自動で調整 */
+      }
+
       /* ボタンの基本スタイル */
       .button {
         background-color: #B2AB9F;
@@ -189,16 +201,21 @@
     </div>
 
     <script>
-      function toggleSection(section) {
+      // セクションの表示切り替え
+      function toggleSection(sectionId) {
         const sections = ['plan', 'about-me', 'contact'];
-        sections.forEach((sec) => {
-          document.getElementById(sec).style.display = (sec === section) ? 'block' : 'none';
+        sections.forEach(id => {
+          const element = document.getElementById(id);
+          if (id === sectionId) {
+            element.style.display = element.style.display === 'block' ? 'none' : 'block';
+          } else {
+            element.style.display = 'none';
+          }
         });
       }
 
-      // スライドショーの画像切り替え
+      // スライドショーのスクリプト
       let slideIndex = 0;
-      showSlides();
 
       function showSlides() {
         let slides = document.getElementsByClassName("mySlides");
@@ -207,9 +224,11 @@
         }
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 2000); // 2秒ごとに切り替え
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // 3秒ごとに切り替え
       }
+
+      showSlides();
     </script>
   </body>
 </html>
