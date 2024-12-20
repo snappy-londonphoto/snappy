@@ -1,19 +1,26 @@
-/* ヘッダー画像 */
-.header-image {
-  width: 100%;
-  height: auto;
+/* 画像を中央に配置 */
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
-/* 画像と文章の間隔をあける */
+.profile-image {
+  width: 200px; /* 画像の幅を調整 */
+  height: auto;
+  border-radius: 50%; /* 画像を丸くする場合 */
+}
+
+/* 画像と文章の間隔 */
 .text-container {
   text-align: center;
-  margin-top: 30px; /* 画像と文章の間隔 */
-  font-size: 18px; /* フォントサイズ */
-  color: #888; /* グレー */
+  margin-top: 30px;
+  font-size: 18px;
+  color: #888;
   line-height: 1.6;
 }
 
-/* 見出しの強調 */
 .text-container strong {
   font-size: 20px; /* 見出し部分のフォントサイズを少し大きく */
   font-weight: bold;
@@ -26,9 +33,70 @@
   color: #444;
 }
 
-/* 英文のスタイル */
+.email a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.email a:hover {
+  text-decoration: underline;
+}
+
 .english-text {
   margin-top: 20px;
   font-size: 18px;
   color: #444;
+}
+
+/* ヘッダー部分のスタイル (ハンバーガーメニュー用) */
+.header {
+  background-color: #333;
+  padding: 20px;
+}
+
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__title a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.nav__items {
+  display: flex;
+  list-style: none;
+}
+
+.nav-items__item {
+  margin: 0 15px;
+}
+
+.nav-items__item a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-items__item a:hover {
+  text-decoration: underline;
+}
+
+/* ハンバーガーメニュー */
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .header__nav {
+    display: none;
+  }
+  .header__nav.active {
+    display: block;
+  }
 }
