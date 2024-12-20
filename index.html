@@ -84,9 +84,6 @@
         width: 100%; /* ボタンが横幅いっぱいに広がる */
         height: 60px; /* ボタンの高さ */
         line-height: 60px; /* ボタン内の文字を中央に配置 */
-        position: absolute; /* ボタンをスライドショー画像の下に固定 */
-        bottom: 20px; /* スライドショーの下部に配置 */
-        left: 0;
       }
 
       .button:hover {
@@ -155,7 +152,7 @@
 
   <body>
     <div class="header">
-      <h1 onclick="resumeSlideshow()">London Photography</h1>
+      <h1>London Photography</h1>
       <p>Capturing special moments in London and across Europe</p>
     </div>
 
@@ -227,15 +224,13 @@
     <!-- About Me セクション -->
     <div id="about-me" class="about-me-content">
       <h3>About Me</h3>
-      <p>イギリス ロンドン在住のMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。特別な瞬間を写真に収め、心を込めてお届けします。</p>
-      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p><br>
+      <p>ロンドン在住のフォトグラファーMakoです。2024年1月からロンドンに住んでおり、写真撮影サービスをスタートしました。</p>
+      <p>撮影依頼やご相談はお気軽にメールでお問い合わせください。</p>
 
-      
       <!-- プロフィール画像 -->
       <img class="profile-img" src="https://github.com/snappy-londonphoto/snappy/blob/c7f60f3e264a9b58d37871f8ed3bcb25d933d651/profile2.png?raw=true" alt="Mako's Profile Image">
     </div>
 
-    
     <!-- Contact セクション -->
     <div id="contact" class="contact-content">
       <h3>Contact</h3>
@@ -245,35 +240,6 @@
     </div>
 
     <script>
-      let slideIndex = 0;
-      let slideInterval;
-
-      function showSlides() {
-        let slides = document.getElementsByClassName("mySlides");
-        for (let i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-        }
-        slideIndex++;
-        if (slideIndex > slides.length) {slideIndex = 1}
-        slides[slideIndex - 1].style.display = "block";
-      }
-
-      function startSlideshow() {
-        slideInterval = setInterval(showSlides, 3000); // 3秒ごとにスライド
-      }
-
-      function stopSlideshow() {
-        clearInterval(slideInterval); // スライドショーを停止
-      }
-
-      function resumeSlideshow() {
-        stopSlideshow();
-        startSlideshow(); // ヘッダーをクリックしてスライドショー再開
-      }
-
-      // 初期状態でスライドショーを開始
-      startSlideshow();
-
       // セクションの表示切り替え
       function toggleSection(sectionId) {
         const sections = ['plan', 'about-me', 'contact'];
@@ -285,8 +251,23 @@
             element.style.display = 'none';
           }
         });
-        stopSlideshow(); // ボタンを押したらスライドショー停止
       }
+
+      // スライドショーのスクリプト
+      let slideIndex = 0;
+
+      function showSlides() {
+        let slides = document.getElementsByClassName("mySlides");
+        for (let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 3000); // 3秒ごとにスライド
+      }
+
+      showSlides();
     </script>
   </body>
 </html>
