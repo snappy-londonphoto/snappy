@@ -8,94 +8,85 @@
     <link rel="stylesheet" href="loading.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
-      /* 基本の背景色とテキスト色 */
+      /* 全体の背景色とテキスト色 */
       body {
-        background-color: #f4f4f9; /* 淡いグレー */
+        background-color: #f9f9f9; /* 穏やかなグレー */
         color: #333333; /* ダークグレー */
-        font-family: 'Montserrat', sans-serif; /* 英語はMontserrat */
+        font-family: 'Montserrat', sans-serif; /* Montserratフォント */
         margin: 0;
         padding: 0;
-        text-align: center; /* 全体を中央寄せ */
+        text-align: center; /* 中央寄せ */
       }
 
-      /* ヘッダー部分（ロゴ画像なし） */
+      /* ヘッダー部分 */
       .header {
         background-color: #ffffff; /* 白背景 */
-        padding: 50px 0;
+        padding: 50px 20px;
         text-align: center;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        margin: 0 auto;
-        max-width: 1200px; /* 最大幅を設定 */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        box-sizing: border-box;
       }
 
       .header h1 {
-        font-family: 'Montserrat', sans-serif;
-        font-size: 48px; /* 大きなフォントサイズ */
+        font-size: 48px;
         font-weight: bold;
-        color: #234466; /* 深みのあるブルー */
-        letter-spacing: 2px;
+        color: #333333; /* ダークグレー */
+        letter-spacing: 1px;
+        margin: 0;
       }
 
       .header p {
         font-size: 18px;
-        color: #999999; /* グレー */
+        color: #888888; /* 明るめのグレー */
         margin-top: 10px;
+        margin-bottom: 0;
       }
 
       /* 流れるテキスト部分 */
       .bbs {
-        background-color: #f4f4f9; /* サイト全体と同じ背景色 */
-        color: #333333; /* ダークグレー */
+        background-color: #f9f9f9; /* サイト全体と同じ背景色 */
         padding: 20px;
         font-size: 20px;
-        font-family: 'Montserrat', sans-serif; /* フォント */
-        text-align: center;
-        max-width: 1200px; /* 最大幅を設定 */
-        margin: 0 auto; /* 中央寄せ */
+        color: #333333;
+        max-width: 1200px;
+        margin: 20px auto;
+        font-family: 'Montserrat', sans-serif;
       }
 
       /* ギャラリーのセクション */
       .container {
         background-color: #ffffff; /* 白背景 */
-        padding: 20px;
+        padding: 40px 20px;
         margin-top: 20px;
         border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        max-width: 1200px; /* 最大幅を設定 */
-        margin: 20px auto; /* 中央寄せ */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin: 20px auto;
       }
 
-      /* Portfolioリンク */
+      /* ボタンの基本スタイル */
       .button {
         background-color: #ffffff; /* 白背景 */
-        color: #333333; /* グレー */
-        padding: 10px 20px;
-        border-radius: 5px;
+        color: #333333; /* ダークグレー */
+        padding: 12px 25px;
+        border-radius: 50px; /* 丸みを帯びたデザイン */
         text-align: center;
         text-decoration: none;
-        font-family: 'Montserrat', sans-serif; /* フォント */
         font-size: 18px;
         border: 2px solid #cccccc; /* グレーのボーダー */
-        margin-bottom: 10px;
         display: inline-block;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+        margin-bottom: 15px;
       }
 
+      /* ボタンホバー時 */
       .button:hover {
-        background-color: #e8e8e8; /* ホバー時に背景色を少し変更 */
-        color: #5a9bd5; /* 穏やかなブルー */
-      }
-
-      /* People、Travelリンクのスタイル（Portfolioと同じ） */
-      .button {
-        background-color: #ffffff;
-        color: #333333;
-        font-family: 'Montserrat', sans-serif;
-        border: 2px solid #cccccc;
-      }
-
-      .button:hover {
-        background-color: #e8e8e8;
-        color: #5a9bd5;
+        background-color: #5a9bd5; /* 穏やかなブルー */
+        color: #ffffff; /* 白文字 */
+        border: 2px solid #5a9bd5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボタンに軽い影を追加 */
       }
 
       /* スライドショーの画像の調整 */
@@ -103,7 +94,7 @@
         position: relative;
         max-width: 100%;
         margin: auto;
-        display: block; /* 中央寄せ */
+        display: block;
       }
 
       .mySlides {
@@ -112,7 +103,7 @@
 
       .mySlides img {
         width: 100%;
-        border-radius: 10px;
+        border-radius: 8px;
         height: auto;
       }
 
@@ -120,21 +111,30 @@
         background-color: #e8f0f5; /* 薄いブルー */
         padding: 20px;
         text-align: center;
-        max-width: 1200px; /* 最大幅を設定 */
-        margin: 20px auto; /* 中央寄せ */
+        max-width: 1200px;
+        margin: 20px auto;
       }
 
       /* メールやInstagramのリンク */
       .contact-links a {
+        display: inline-block;
+        background-color: #ffffff;
         color: #333333;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-align: center;
         text-decoration: none;
-        font-family: 'Montserrat', sans-serif;
-        margin: 10px;
         font-size: 18px;
+        border: 2px solid #cccccc;
+        transition: all 0.3s ease;
+        margin: 10px;
       }
 
       .contact-links a:hover {
-        color: #5a9bd5; /* 穏やかなブルー */
+        background-color: #5a9bd5;
+        color: #ffffff;
+        border: 2px solid #5a9bd5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       }
     </style>
   </head>
@@ -179,8 +179,8 @@
 
     <div class="contact-links">
       <h3>Contact</h3>
-      <p><a href="mailto:snappy.filmphoto@gmail.com">Email</a></p>
-      <p><a href="https://www.instagram.com/snappy_londonphoto" target="_blank">Instagram</a></p>
+      <p><a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a></p>
+      <p><a href="https://www.instagram.com/snappy_londonphoto" target="_blank" class="button">Instagram</a></p>
     </div>
 
     <footer class="footer" id="jumpTop">
@@ -199,7 +199,7 @@
         slideIndex++;
         if (slideIndex > slides.length) {slideIndex = 1}
         slides[slideIndex-1].style.display = "block";
-        setTimeout(showSlides, 2000); // 2秒ごとに切り替え
+        setTimeout(showSlides, 3000); // 3秒ごとに切り替え
       }
 
       showSlides();
