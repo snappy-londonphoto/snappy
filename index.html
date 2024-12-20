@@ -16,6 +16,7 @@
         color: #333;
         background-color: #EBE8E2;
         overflow-x: hidden;
+        position: relative; /* ページ最下部にアイコンを固定するため */
       }
 
       h1, h3 {
@@ -168,15 +169,22 @@
 
       /* インスタグラムアイコンの位置 */
       .insta-icon {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
+        position: fixed;
+        bottom: 20px;  /* ページの下部に配置 */
+        left: 50%;  /* 中央に配置 */
+        transform: translateX(-50%);  /* アイコンを中央に調整 */
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         background-image: url('https://github.com/snappy-londonphoto/snappy/blob/f072fe0c9ef379cac4bb72dce6cf780becbac7fc/insta_icon.avif?raw=true');
         background-size: cover;
         background-position: center;
+        z-index: 999;
+        transition: opacity 0.3s ease;
+      }
+
+      .insta-icon:hover {
+        opacity: 0.7; /* ホバー時の透明度 */
       }
 
       /* レスポンシブデザイン */
@@ -201,42 +209,7 @@
         .content p {
           font-size: 16px;
         }
-
-        /* モバイルの場合のインスタグラムアイコン位置 */
-        .insta-icon {
-          position: absolute;
-          top: 10px;
-          left: 50%;
-          transform: translateX(-50%);
-        }
       }
-
-      /* 半透明の追従ヘッダー */
-      .fixed-header {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: rgba(210, 201, 190, 0.9); /* 半透明 */
-        z-index: 1000;
-        opacity: 0.9;
-        padding: 20px 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .fixed-header .logo {
-        color: #333;
-        font-size: 48px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: opacity 0.3s ease;
-      }
-
-      .fixed-header.scrolled {
-        opacity: 1; /* スクロール後は完全不透明 */
-      }
-
     </style>
   </head>
 
@@ -246,9 +219,6 @@
       <div class="logo">Snappy Film</div>
       <div class="location">Based in London</div>
     </header>
-
-    <!-- インスタグラムアイコン -->
-    <a href="https://www.instagram.com/photo.uk7/" target="_blank" class="insta-icon"></a>
 
     <!-- メニュー -->
     <nav>
@@ -331,6 +301,9 @@
       <p>For bookings or inquiries, feel free to reach out via email.</p>
     </div>
 
+    <!-- インスタグラムアイコン -->
+    <a href="https://www.instagram.com/photo.uk7/" target="_blank" class="insta-icon"></a>
+
     <script>
       // スライドショーのスクリプト
       let slideIndex = 0;
@@ -349,16 +322,6 @@
       }
 
       showSlides();
-
-      // スクロール時の透明度変更
-      window.addEventListener('scroll', function() {
-        const header = document.getElementById('header');
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
     </script>
   </body>
 </html>
