@@ -16,7 +16,7 @@
         color: #333;
         background-color: #EBE8E2;
         overflow-x: hidden;
-        position: relative; /* ページ最下部にアイコンを固定するため */
+        position: relative;
       }
 
       h1, h3 {
@@ -31,44 +31,30 @@
         text-align: center;
         z-index: 100;
         transition: background-color 0.3s ease, opacity 0.3s ease;
-        position: relative;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(210, 201, 190, 0.8); /* 半透明 */
+        width: 100%;
+        text-align: center;
+      }
+
+      header.sticky {
+        background-color: #D2C9BE; /* 固定時の背景色 */
       }
 
       header .logo {
-        text-align: center;
         color: #333;
         font-size: 48px;
         font-weight: bold;
         letter-spacing: 1px;
         text-transform: uppercase;
         transition: opacity 0.3s ease;
-        position: fixed; /* 初期位置を固定 */
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
         z-index: 100;
         padding: 10px 0;
-        background-color: rgba(210, 201, 190, 0.8); /* 背景を半透明にする */
         width: 100%;
-      }
-
-      header.sticky {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background-color: #D2C9BE;
-        padding: 20px 0;
-        text-align: center;
-        z-index: 100;
-      }
-
-      header .logo {
-        color: #333;
-        font-size: 48px;
-        font-weight: bold;
-        letter-spacing: 1px;
-        text-transform: uppercase;
+        position: relative;
       }
 
       header .location {
@@ -82,14 +68,13 @@
       nav {
         display: flex;
         justify-content: center;
-        margin-top: 20px; /* メニューとスライドショーの間隔を詰める */
-        flex-wrap: wrap; /* 画面幅が狭くなったときに項目が折り返される */
+        margin-top: 20px;
       }
 
       nav a {
         text-decoration: none;
         color: #333;
-        font-size: 20px;  /* PLANに合わせたフォントサイズ */
+        font-size: 20px;
         margin: 0 20px;
         text-transform: uppercase;
         font-weight: bold;
@@ -99,7 +84,7 @@
 
       nav a:hover {
         color: #B2AB9F;
-        border-bottom: 2px solid #B2AB9F;  /* ホバー時に下線を表示 */
+        border-bottom: 2px solid #B2AB9F;
       }
 
       /* スライドショー */
@@ -194,10 +179,10 @@
 
       /* インスタグラムアイコンの位置 */
       .insta-icon {
-        position: absolute;
-        bottom: 0; /* Contactセクションの直下に配置 */
-        left: 50%;  /* 中央に配置 */
-        transform: translateX(-50%);  /* アイコンを中央に調整 */
+        position: fixed;
+        bottom: 10px; /* 最下部 */
+        left: 50%;  /* 中央 */
+        transform: translateX(-50%);
         width: 50px;
         height: 50px;
         border-radius: 50%;
@@ -205,11 +190,10 @@
         background-size: cover;
         background-position: center;
         z-index: 999;
-        transition: opacity 0.3s ease;
       }
 
       .insta-icon:hover {
-        opacity: 0.7; /* ホバー時の透明度 */
+        opacity: 0.7;
       }
 
       /* レスポンシブデザイン */
@@ -219,12 +203,12 @@
         }
 
         nav {
-          justify-content: space-evenly;  /* リンクを均等に配置 */
+          justify-content: space-evenly;
         }
 
         nav a {
-          font-size: 14px;  /* フォントサイズを小さく */
-          margin: 0 10px;  /* メニュー項目間の間隔を狭く */
+          font-size: 14px;
+          margin: 0 10px;
         }
 
         .content h3 {
@@ -249,7 +233,7 @@
     <nav>
       <a href="#plan">PLAN</a>
       <a href="#about-me">ABOUT ME</a>
-      <a href="photo-gallery.html" target="_blank">PHOTO</a> <!-- リンク先のページ -->
+      <a href="photo-gallery.html" target="_blank">PHOTO</a>
       <a href="#contact">CONTACT</a>
     </nav>
 
@@ -275,7 +259,6 @@
     <!-- Plan セクション -->
     <div id="plan" class="content">
       <h3>Plan</h3>
-      
       <h4>01. Short Plan</h4>
       <ul>
         <li>所要時間：約30分</li>
@@ -301,6 +284,7 @@
         <li>ペット写真</li>
         <li>商品写真</li>
       </ul>
+
       <p>その他、ご要望に応じて幅広く対応いたしますので、お気軽にご相談ください。</p>
 
       <h4>Area</h4>
@@ -326,6 +310,8 @@
       <p>For bookings or inquiries, feel free to reach out via email.</p>
     </div>
 
+
+    
     <!-- インスタグラムアイコン -->
     <a href="https://www.instagram.com/photo.uk7/" target="_blank" class="insta-icon"></a>
 
@@ -348,13 +334,14 @@
 
       showSlides();
 
-      // ロゴの追従停止を設定
+      // ロゴの追従を制御
       window.onscroll = function() {
         let header = document.querySelector("header");
         let planSection = document.getElementById("plan");
-        let headerBottom = header.offsetTop + header.offsetHeight;
+        let planTop = planSection.offsetTop;
+        let planHeight = planSection.offsetHeight;
 
-        if (window.scrollY >= planSection.offsetTop - header.offsetHeight) {
+        if (window.scrollY >= planTop - header.offsetHeight) {
           header.classList.remove("sticky");
         } else {
           header.classList.add("sticky");
