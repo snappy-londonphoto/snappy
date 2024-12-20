@@ -8,7 +8,151 @@
     <link rel="stylesheet" href="loading.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <style>
-      /* 既存のスタイルはそのまま */
+      /* 全体の背景色とテキスト色 */
+      body {
+        background-color: #f9f9f9; /* 穏やかなグレー */
+        color: #333333; /* ダークグレー */
+        font-family: 'Montserrat', sans-serif; /* Montserratフォント */
+        margin: 0;
+        padding: 0;
+        text-align: center; /* 中央寄せ */
+      }
+
+      /* ヘッダー部分 */
+      .header {
+        background-color: #ffffff; /* 白背景 */
+        padding: 50px 20px;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .header h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color: #333333; /* ダークグレー */
+        letter-spacing: 1px;
+        margin: 0;
+      }
+
+      .header p {
+        font-size: 18px;
+        color: #888888; /* 明るめのグレー */
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+
+      /* 流れるテキスト部分 */
+      .bbs {
+        background-color: #f9f9f9; /* サイト全体と同じ背景色 */
+        padding: 20px;
+        font-size: 20px;
+        color: #333333;
+        max-width: 1200px;
+        margin: 20px auto;
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      /* ギャラリーのセクション */
+      .container {
+        background-color: #ffffff; /* 白背景 */
+        padding: 40px 20px;
+        margin-top: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      /* ボタンの基本スタイル */
+      .button {
+        background-color: #ffffff; /* 白背景 */
+        color: #333333; /* ダークグレー */
+        padding: 12px 25px;
+        border-radius: 50px; /* 丸みを帯びたデザイン */
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        border: 2px solid #cccccc; /* グレーのボーダー */
+        display: inline-block;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+        margin-bottom: 15px;
+      }
+
+      /* ボタンホバー時 */
+      .button:hover {
+        background-color: #5a9bd5; /* 穏やかなブルー */
+        color: #ffffff; /* 白文字 */
+        border: 2px solid #5a9bd5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ボタンに軽い影を追加 */
+      }
+
+      /* スライドショーの画像の調整 */
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        display: block;
+      }
+
+      .mySlides {
+        display: none;
+      }
+
+      .mySlides img {
+        width: 100%;
+        border-radius: 8px;
+        height: auto;
+      }
+
+      footer {
+        background-color: #e8f0f5; /* 薄いブルー */
+        padding: 20px;
+        text-align: center;
+        max-width: 1200px;
+        margin: 20px auto;
+      }
+
+      /* メールやInstagramのリンク */
+      .contact-links a {
+        display: inline-block;
+        background-color: #ffffff;
+        color: #333333;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 18px;
+        border: 2px solid #cccccc;
+        transition: all 0.3s ease;
+        margin: 10px;
+      }
+
+      .contact-links a:hover {
+        background-color: #5a9bd5;
+        color: #ffffff;
+        border: 2px solid #5a9bd5;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* About Me セクションの非表示 */
+      .about-me-content {
+        display: none;
+        margin-top: 20px;
+        text-align: left;
+        font-size: 18px;
+        color: #333333;
+      }
+
+      .about-me-content img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-right: 15px;
+        vertical-align: middle;
+      }
     </style>
   </head>
 
@@ -43,7 +187,7 @@
     <div class="contact-links">
       <h3>Contact</h3>
       <p><a href="javascript:void(0);" class="button" onclick="toggleAboutMe()">About Me</a></p>
-      <p><a href="photo.html" class="button">Photo</a></p> <!-- ここが更新された部分 -->
+      <p><a href="https://github.com/snappy-londonphoto/snappy/blob/123086a77f7b17898caa7650cc8b73cccc23052f/index%20works.html" class="button">Photo</a></p>
       <p><a href="mailto:snappy.filmphoto@gmail.com" class="button">Email</a></p>
       <p><a href="https://www.instagram.com/snappy_londonphoto" target="_blank" class="button">Instagram</a></p>
     </div>
