@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>   
+<head>
   <meta charset="utf-8">
   <title>M's Film</title>
   <link rel="stylesheet" href="style.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 </head>
 
 <body> 
@@ -36,24 +36,34 @@
       </div>
     </header>
 
-    <main class="main-content">
-      <section id="about-me">
-        <h2 class="about-me-title">About Me</h2>
-        <p class="about-me-text">
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p class="about-text">
           はじめまして、ロンドン在住のMakoです。<br>
-          一人ひとりの自然な笑顔を写真に収め、心をこめてお届けします。
+          一人ひとりの自然な笑顔を写真に収め、心をこめてお届けします。<br><br>
+          ヨーロッパ圏内での撮影も承っており、ロンドンやその周辺エリアでの撮影はもちろん、旅行ついでに素敵な写真を残したい方にもご対応いたします。<br><br>
+          撮影依頼やご相談はお気軽にメールにてお問い合わせください。<br><br>
+          snappy.filmphoto@gmail.com
         </p>
-        <p class="about-me-text">
-          ヨーロッパ圏内での撮影も承っており、ロンドンやその周辺エリアでの撮影はもちろん、旅行ついでに素敵な写真を残したい方にもご対応いたします。<br>
-          撮影依頼やご相談はお気軽にメールにてお問い合わせください。
-        </p>
-        <p class="about-me-text">Email: <a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a></p>
-        <p class="about-me-text">
-          I’m Mako, a London-based photographer. I capture special moments in London and across Europe.<br>
+        <p class="about-text-en">
+          I’m Mako, a London-based photographer. I capture special moments in London and across Europe. <br>
           For bookings, feel free to reach out via email.
         </p>
       </section>
     </main>
+
+    <script>
+      $(document).ready(function() {
+        const ham = $('#js-hamburger');
+        const nav = $('#js-nav');
+        
+        ham.on('click', function () { //ハンバーガーメニューをクリックしたら
+          ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
+          nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+        });
+      });
+    </script>
   </div>
 </body>
 </html>
