@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
+<head>   
   <meta charset="utf-8">
-  <title>M's Film</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Plan - SNAPPY</title>
+  <link rel="stylesheet" href="plan.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
 </head>
 
-<body>
+<body> 
   <div class="container">
     <header class="header">
       <div class="header__inner">
@@ -21,7 +21,7 @@
           <ul class="nav__items nav-items">
             <li class="nav-items__item"><a href="about.html">About Me</a></li>
             <li class="nav-items__item"><a href="plan.html">Plan</a></li>
-            <li class="nav-items__item"><a href="People.html">Gallery</a></li>
+            <li class="nav-items__item"><a href="gallery.html">Gallery</a></li>
             <li class="nav-items__item">
               <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank">Instagram</a>
             </li>
@@ -37,33 +37,14 @@
     </header>
 
     <main>
-      <!-- Plan Section -->
       <section id="plan">
-        <h2 class="section-title">Plan / プラン</h2>
-        <div class="plan-content">
-          <div class="plan-item">
-            <h3>01. Short Plan</h3>
-            <ul>
-              <li>所要時間：約30分</li>
-              <li>納品枚数：10枚〜</li>
-              <li>料金：£30</li>
-            </ul>
-          </div>
-          <div class="plan-item">
-            <h3>02. Standard Plan</h3>
-            <ul>
-              <li>所要時間：約1時間</li>
-              <li>納品枚数：30枚〜</li>
-              <li>料金：£50</li>
-            </ul>
-          </div>
-        </div>
-        <p>終日撮影や動画撮影をご希望の場合も、ぜひご相談ください。撮影内容や写真の雰囲気、色味などはお客様のご希望に合わせて調整いたします。</p>
+        <h2>Plan / プラン</h2>
+        <p>01. Short Plan<br>所要時間：約30分<br>納品枚数：10枚〜<br>料金：£30</p>
+        <p>02.Standard Plan<br>所要時間：約1時間<br>納品枚数：30枚〜<br>料金：£50</p>
       </section>
 
-      <!-- Genre Section -->
       <section id="genre">
-        <h2 class="section-title">Genre / ジャンル</h2>
+        <h2>Genre / ジャンル</h2>
         <ul>
           <li>ポートレート</li>
           <li>ファミリーフォト</li>
@@ -72,37 +53,35 @@
           <li>ペット写真</li>
           <li>商品写真</li>
         </ul>
-        <p>その他、ご要望に応じて幅広く対応いたしますので、お気軽にご相談ください。</p>
       </section>
 
-      <!-- Area Section -->
       <section id="area">
-        <h2 class="section-title">Area / 撮影エリア</h2>
-        <ul>
-          <li>ロンドン市内の観光地（ウェストミンスター周辺など）</li>
-          <li>ご自宅やお好きな場所</li>
-        </ul>
-        <p>交通費をお客様にご負担いただければ、ロンドン市外での撮影も承ります。ご希望の場所がございましたら、ぜひ一度ご相談ください。</p>
+        <h2>Area / 撮影エリア</h2>
+        <p>ロンドン市内の観光地（ウェストミンスター周辺など）<br>ご自宅やお好きな場所</p>
       </section>
 
-      <!-- Contact Section -->
       <section id="contact">
-        <h2 class="section-title">Contact / 連絡先</h2>
-        <p>お気軽に<a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a>までご連絡ください。お客様との大切な時間を一緒に作り上げることを楽しみにしています。</p>
+        <h2>Contact / 連絡先</h2>
+        <p>お気軽に<a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a>までご連絡ください。</p>
       </section>
-    </main>
 
-    <script>
-      $(document).ready(function() {
-        const ham = $('#js-hamburger');
-        const nav = $('#js-nav');
-        
-        ham.on('click', function () {
-          ham.toggleClass('active');
-          nav.toggleClass('active');
-        });
-      });
-    </script>
+      <!-- 画像 -->
+      <div class="bottom-image">
+        <img src="https://example.com/image.jpg" alt="Example Image">
+      </div>
+    </main>
   </div>
+
+  <script>
+    $(document).ready(function() {
+      const ham = $('#js-hamburger');
+      const nav = $('#js-nav');
+      
+      ham.on('click', function () {
+        ham.toggleClass('active');
+        nav.toggleClass('active');
+      });
+    });
+  </script>
 </body>
 </html>
