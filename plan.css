@@ -1,0 +1,296 @@
+/* 基本の背景色と全体の設定 */
+body {
+  background-color: white; /* 背景を白に */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* メインセクションの設定 */
+main {
+  background-color: white; /* 背景色を白に */
+  width: 100%; /* 横幅をデバイスに合わせる */
+  padding-top: 100px; /* ヘッダーとの重なり防止 */
+  box-sizing: border-box; /* パディングが幅に含まれるように */
+}
+
+/* Planセクションの設定 */
+#plan {
+  padding: 50px 20px;
+  background-color: white; /* 背景色 */
+  text-align: center;
+  width: 100%; /* 横幅を100%に */
+  max-width: 100%; /* 最大幅も100%に */
+  box-sizing: border-box; /* パディングが幅に含まれるように */
+}
+
+#plan h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.plan {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.plan-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.plan-item h3 {
+  color: #007bff;
+}
+
+ul {
+  list-style: none;
+  padding-left: 20px;
+}
+
+ul li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+#plan .plan-item br {
+  margin-bottom: 10px;
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width: 600px) {
+  #plan {
+    padding: 30px 10px; /* パディングを調整 */
+  }
+
+  .plan-item {
+    padding: 15px;
+  }
+
+  .plan {
+    grid-template-columns: 1fr;
+  }
+
+  #plan h2 {
+    font-size: 1.8rem;
+  }
+
+  ul li {
+    font-size: 0.9rem; /* フォントサイズを調整 */
+  }
+}
+
+/* 上部の画像 */
+.top-image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top-image img {
+  max-width: 90%;  /* 横幅を90%に制限 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 下部の画像 */
+.bottom-image {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bottom-image img {
+  max-width: 90%;  /* 横幅を90%に制限 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 調整用スタイル */
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+/* ヘッダー */
+.header {
+  background-color: rgb(255, 255, 255);
+  margin-top: -30px; /* header全体の高さ調整 */
+  width: 100%;/* 変えない */ 
+  height: 200px;/* ヘッダーmenuの帯幅調整 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.header__inner {
+  padding: 0px 10px 0px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: inherit;
+  position: relative;
+}
+
+/* ヘッダーのロゴ部分 */
+.header__title {
+  padding-top: 100px;/* Photolifeの高さ調整 */
+  padding-bottom: 120px;/* Photolifeの下幅調整 */
+  padding-left: 15px;
+}
+
+.header-title a {
+  color: rgb(81, 77, 77);
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif; /* Montserratフォントを適用 */
+  font-weight: 300; /* フォントのウェイトを調整（300は細めのウェイト） */
+  font-size: 25px;
+}
+
+@media screen and (min-width: 1200px) {
+  .header__title {
+    width: 120px;
+  }
+}
+
+.header__title img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* ヘッダーのナビ部分 */
+
+.header__nav {/* ハンバーガーメニューの設定 */
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateX(100%);
+  background-color: rgb(137, 132, 132);/* ハンバーガーメニューの内側色 */
+  transition: ease .4s;
+}
+
+/* ナビゲーションが表示される時 */
+.header__nav.active {
+  transform: translateX(0);
+}
+
+@media screen and (min-width: 1200px) {
+  .header__nav {
+    position: static;
+    transform: initial;
+    background-color: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: end;
+    width: 40%;/* PC版submenuの幅設定 */
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav__items {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    height: initial;
+    justify-content: space-between;
+  }
+}
+
+.nav-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-items {
+    position: inherit;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
+
+/* ナビ内のフォント調整 */
+.nav-items__item a {
+  color: rgb(232, 228, 228);
+  width: 100%;
+  display: block;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 24px;
+}
+
+.nav-items__item:last-child a {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  .nav-items__item a {
+    margin-bottom: 0;
+  }
+}
+
+/* ハンバーガーメニュー */
+
+.header__hamburger {
+  width: 48px;
+  height: 100%;
+}
+
+.hamburger {
+  background-color: transparent;
+  border-color: transparent;
+  z-index: 9999;
+}
+
+@media screen and (min-width: 1200px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/* ハンバーガーメニューの線 */
+.hamburger span {
+  width: 100%;
+  height: 1px;
+  background-color: #000000da;/* ハンバーガーメニューの線色 */
+  display: block;
+  margin-bottom: 6px;
+}
+
+.hamburger.active span:nth-of-type(1) {
+  transform: rotate(45deg);
+  margin-bottom: 0;
+}
+
+.hamburger.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  margin-top: 0;
+}
