@@ -1,46 +1,101 @@
-<aside class="profile-card">
-  <header>
-    <!-- here’s the avatar -->
-    <a target="_blank" href="#">
-      <img src="images/avatar.jpg" alt="John Doe" class="hoverZoomLink">
-    </a>
+<!DOCTYPE html>
+<html lang="ja">
+<head>   
+  <meta charset="utf-8">
+  <title>M's Film</title>
+  <meta name="description" content="テキストテキストテキストテキストテキストテキストテキストテキスト">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
 
-    <!-- the username -->
-    <h1>John Doe</h1>
+<body> 
+  <div class="container">
+    <!-- ①ヘッダー部分 -->
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title header-title">
+          <a href="pagetitle">SNAPPY</a>
+        </h1>
 
-    <!-- and role or location -->
-    <h2>Better Visuals</h2>
+        <nav class="header__nav nav" id="js-nav">
+          <ul class="nav__items nav-items">
+            <li class="nav-items__item"><a href="about.html">About Me</a></li>
+            <li class="nav-items__item"><a href="plan.html">Plan</a></li>
+            <li class="nav-items__item"><a href="gallery.html">Gallery</a></li>
+            <li class="nav-items__item"><a href="contact.html">Contact</a></li>
+            <li class="nav-items__item">
+              <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank">Instagram</a>
+            </li>
+          </ul>
+        </nav>
 
-  </header>
+        <button class="header__hamburger hamburger" id="js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    
+    <!-- ②メインビジュアル以下 -->
+    <main>
+      <div id="mainvisual">
+        <img src="img/mainvisual.jpg" alt="テキストテキストテキスト">
+      </div>
 
-  <!-- bit of a bio; who are you? -->
-  <div class="profile-bio">
-    <p>
-      It takes monumental improvement for us to change how we live our lives. Design is the way we access that improvement.
-    </p>
+      <section id="about" class="wrapper">
+        <h2 class="section-title">About</h2>
+        <div class="content">
+          <img src="img/about.jpg" alt="テキストテキストテキスト">
+          <div class="text">
+            <h3 class="content-title">KAKERU MIYAICHI</h3>
+            <p>
+              テキストテキストテキストテキストテキストテキストテキスト<br>
+              テキストテキストテキストテキストテキストテキストテキスト<br>
+              テキストテキストテキストテキストテキストテキストテキスト
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="bicycle" class="wrapper">
+        <h2 class="section-title">Bicycle</h2>
+        <ul>
+          <li>
+            <img src="img/bicycle1.jpg" alt="テキストテキストテキスト">
+            <h3 class="content-title">タイトルタイトル</h3>
+            <p>テキストテキストテキスト</p>
+          </li>
+          <li>
+            <img src="img/bicycle2.jpg" alt="テキストテキストテキスト">
+            <h3 class="content-title">タイトルタイトル</h3>
+            <p>テキストテキストテキスト</p>
+          </li>
+          <li>
+            <img src="img/bicycle3.jpg" alt="テキストテキストテキスト">
+            <h3 class="content-title">タイトルタイトル</h3>
+            <p>テキストテキストテキスト</p>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <p>&copy; 2020 Profile</p>
+    </footer>
   </div>
-
-  <!-- some social links to show off -->
-  <ul class="profile-social-links">
-    <li>
-      <a target="_blank" href="https://www.facebook.com/creativedonut">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M22 12l-2-2c-.1-.1-.2-.1-.3-.1s-.2.1-.3.1c-.4 0-.7.3-.7.7v5.3h-3.6V12h3c.4 0 .7-.3.7-.7s-.3-.7-.7-.7H12V7c0-.4.3-.7.7-.7s.7.3.7.7v3.6h2.5c.4 0 .7.3.7.7s-.3.7-.7.7h-2.5V19c0 .4.3.7.7.7s.7-.3.7-.7V13c0-.4-.3-.7-.7-.7H11c-.4 0-.7.3-.7.7v6.6c0 .4.3.7.7.7h.5v-2.7h3.5v-2.8h-.7v-.5c-.1-.5.3-.9.7-.9h3c-.3 0-.5.2-.6.3z"/></svg>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://twitter.com/dropyourbass">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M23 3a10.05 10.05 0 0 1-2.83.77A4.97 4.97 0 0 0 22.4 1.56a9.91 9.91 0 0 1-3.13 1.2 4.93 4.93 0 0 0-8.4 4.49A14.04 14.04 0 0 1 1.67 1.49a4.9 4.9 0 0 0-.66 2.47c0 1.7.86 3.19 2.15 4.06a4.94 4.94 0 0 1-2.23-.61v.06a4.91 4.91 0 0 0 3.95 4.84c-.42.11-.87.17-1.32.17-.32 0-.62-.03-.92-.08a4.91 4.91 0 0 0 4.59 3.42A9.91 9.91 0 0 1 0 19.54a14.05 14.05 0 0 0 7.58 2.22c9.06 0 14.01-7.52 14.01-14.01 0-.21 0-.42-.02-.63A10.06 10.06 0 0 0 23 3z"/></svg>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://github.com/vipulsaxena">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c-5.5 0-10 4.5-10 10 0 4.4 2.9 8.2 6.9 9.5.5.1.7-.2.7-.5 0-.3 0-1.2 0-2.3 0-.6-.2-.9-.4-1.3-1.3-.5-2.6-.9-2.6-2.1 0-1 .3-1.7.7-2.3-.1-.5-.3-.9-.1-1.4 1.1-.3 2.3.4 3.4.9 1 .3 2.1.3 3.1 0 1.1-.6 2.3-1.2 3.4-.9.2.5 0 .9-.1 1.4.4.6.7 1.3.7 2.3 0 1.3-1.3 1.7-2.6 2.1 0 .5-.3.9-.4 1.3 0 1.1 0 2 0 2.3 0 .3.2.6.7.5 4-.6 6.9-5.1 6.9-9.5 0-5.5-4.5-10-10-10z"/></svg>
-      </a>
-    </li>
-    <li>
-      <a target="_blank" href="https://www.behance.net/vipulsaxena">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M4 2c-1.1 0-1.99.89-1.99 2L2 20c0 1.1.89 2 1.99 2h16c1.1 0 2-.9 2-2V4c0-1.11-.9-2-2-2H4zm8 0h4v16h-4zm-6 16V6h4v12zm8-12h4v12h-4z"/></svg>
-      </a>
-    </li>
-  </ul>
-</aside>
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const ham = $('#js-hamburger');
+      const nav = $('#js-nav');
+      
+      ham.on('click', function () {
+        ham.toggleClass('active');
+        nav.toggleClass('active');
+      });
+    });
+  </script>
+</body>
+</html>
