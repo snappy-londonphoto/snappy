@@ -164,6 +164,10 @@ li {
   transition: ease .4s;
 }
 
+/* ナビゲーションが表示される時 */
+.header__nav.active {
+  transform: translateX(0);
+}
 
 @media screen and (min-width: 1200px) {
   .header__nav {
