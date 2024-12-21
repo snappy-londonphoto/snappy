@@ -8,6 +8,7 @@
     <link rel="icon" href="img/favicon.ico">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   </head>
 
   <body>
@@ -21,15 +22,43 @@
       </nav>
     </header>
 
+    <div class="container">
+      <header class="header">
+        <div class="header__inner">
+          <h1 class="header__title header-title">
+            <a href="pagetitle">SNAPPY</a>
+          </h1>
+
+          <nav class="header__nav nav" id="js-nav">
+            <ul class="nav__items nav-items">
+              <li class="nav-items__item"><a href="about.html">About Me</a></li>
+              <li class="nav-items__item"><a href="plan.html">Plan</a></li>
+              <li class="nav-items__item"><a href="gallery.html">Gallery</a></li>
+              <li class="nav-items__item"><a href="contact.html">Contact</a></li>
+              <li class="nav-items__item">
+                <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank">Instagram</a>
+              </li>
+            </ul>
+          </nav>
+
+          <button class="header__hamburger hamburger" id="js-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </header>
+    </div>
+
     <main>
       <div id="mainvisual">
-        <img src="img/mainvisual.jpg" alt="テキストテキストテキスト">
+        <img src="img/mainvisual.jpg" alt="メインビジュアル">
       </div>
 
       <section id="about" class="wrapper">
         <h2 class="section-title">About</h2>
         <div class="content">
-          <img src="img/about.jpg" alt="テキストテキストテキスト">
+          <img src="img/about.jpg" alt="プロフィール画像">
           <div class="text">
             <h3 class="content-title">KAKERU MIYAICHI</h3>
             <p>
@@ -45,17 +74,17 @@
         <h2 class="section-title">Bicycle</h2>
         <ul>
           <li>
-            <img src="img/bicycle1.jpg" alt="テキストテキストテキスト">
+            <img src="img/bicycle1.jpg" alt="自転車画像1">
             <h3 class="content-title">タイトルタイトル</h3>
             <p>テキストテキストテキスト</p>
           </li>
           <li>
-            <img src="img/bicycle2.jpg" alt="テキストテキストテキスト">
+            <img src="img/bicycle2.jpg" alt="自転車画像2">
             <h3 class="content-title">タイトルタイトル</h3>
             <p>テキストテキストテキスト</p>
           </li>
           <li>
-            <img src="img/bicycle3.jpg" alt="テキストテキストテキスト">
+            <img src="img/bicycle3.jpg" alt="自転車画像3">
             <h3 class="content-title">タイトルタイトル</h3>
             <p>テキストテキストテキスト</p>
           </li>
@@ -67,6 +96,16 @@
       <p>&copy; 2020 Profile</p>
     </footer>
 
+    <script>
+      $(document).ready(function() {
+        const ham = $('#js-hamburger');
+        const nav = $('#js-nav');
+        
+        ham.on('click', function () {
+          ham.toggleClass('active');
+          nav.toggleClass('active');
+        });
+      });
+    </script>
   </body>
-
 </html>
