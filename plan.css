@@ -45,10 +45,12 @@ h3 {
   margin-bottom: 20px;
 }
 
+/* リストのスタイル */
 ul {
-  list-style-type: disc;
-  margin: 20px 0 30px 20px;
-  padding-left: 20px;
+  list-style-type: none;
+  margin: 20px 0 30px;
+  padding-left: 0;
+  text-align: center; /* リストを中央揃え */
 }
 
 ul li {
@@ -56,6 +58,8 @@ ul li {
   margin-bottom: 12px;
   color: #6c757d; /* グレー */
   position: relative; /* 点線を引くために必要 */
+  display: inline-block; /* 中央揃え */
+  padding: 0 10px;
 }
 
 /* リスト項目の上下に点線を引く */
@@ -84,6 +88,65 @@ ul li::after {
   text-align: center; /* 本文を中央揃え */
   line-height: 1.6; /* 行間を調整 */
 }
+
+/* 上部の画像 */
+.top-image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top-image img {
+  max-width: 90%;  /* 横幅を90%に制限 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 下部の画像 */
+.bottom-image {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bottom-image img {
+  max-width: 90%;  /* 横幅を90%に制限 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Aboutセクションのテキスト設定（共通のフォントと色） */
+.about-text, .about-text-en, .plan-content p {
+  font-size: 1rem;
+  color: #6c757d; /* グレー */
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px; /* 最大幅を800pxに制限 */
+  text-align: center; /* 本文を中央揃え */
+}
+
+.about-text-en {
+  font-family: 'Lora', serif; /* 英語用フォント */
+  font-style: regular;
+}
+
+#plan .about-text br {
+  margin-bottom: 10px;
+}
+
+/*-------------------------------------------
+SP
+-------------------------------------------*/
+@media screen and (max-width: 600px) {
+  #plan {
+    padding: 30px 10px; /* パディングを調整 */
+  }
+
+  .about-text {
+    font-size: 0.9rem; /* フォントサイズを調整 */
+  }
+}
+
 
 /* 上部の画像 */
 .top-image {
