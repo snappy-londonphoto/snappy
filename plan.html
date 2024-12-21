@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Plan / プラン</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header__inner">
+        <h1 class="header__title header-title">
+          <a href="index.html">SNAPPY</a>
+        </h1>
+    
+        <nav class="header__nav nav" id="js-nav">
+          <ul class="nav__items nav-items">
+            <li class="nav-items__item"><a href="about.html">About Me</a></li>
+            <li class="nav-items__item"><a href="plan.html">Plan</a></li>
+            <li class="nav-items__item"><a href="People.html">Gallery</a></li>
+            <li class="nav-items__item">
+              <a href="https://www.instagram.com/photo.uk7?igsh=MWIzbG8yaXliczQycg==" target="_blank">Instagram</a>
+            </li>
+          </ul>
+        </nav>
+    
+        <button class="header__hamburger hamburger" id="js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <!-- Plan Section -->
+      <section id="plan">
+        <!-- 上部の画像を差し替え -->
+        <div class="top-image">
+          <img src="https://github.com/snappy-londonphoto/snappy/blob/1f7d1f0d98b218d1a690ace6545cbe8264e51d99/bicycle.jpg?raw=true" alt="Bicycle Plan" />
+        </div>
+
+        <h2>Plan / プラン</h2>
+        <div class="plan">
+          <div class="plan-item">
+            <h3>01. Short Plan</h3>
+            <ul>
+              <li>所要時間：約30分</li>
+              <li>納品枚数：10枚〜</li>
+              <li>料金：£30</li>
+            </ul>
+          </div>
+          <div class="plan-item">
+            <h3>02. Standard Plan</h3>
+            <ul>
+              <li>所要時間：約1時間</li>
+              <li>納品枚数：30枚〜</li>
+              <li>料金：£50</li>
+            </ul>
+          </div>
+        </div>
+        <p>終日撮影や動画撮影をご希望の場合も、ぜひご相談ください。撮影内容や写真の雰囲気、色味などはお客様のご希望に合わせて調整いたします。</p>
+      </section>
+      
+      <!-- 下部の画像を据え置き -->
+      <div class="bottom-image">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/2b5ab3feeca98ec21e55ee7802cf7e6875142f63/london6set.PNG?raw=true" alt="London Photo Set" />
+      </div>
+    </main>
+
+    <script>
+      $(document).ready(function() {
+        const ham = $('#js-hamburger');
+        const nav = $('#js-nav');
+        
+        ham.on('click', function () { // ハンバーガーメニューをクリックしたら
+          ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
+          nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+        });
+      });
+    </script>
+  </div>
+</body>
+</html>
