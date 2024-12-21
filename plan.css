@@ -27,7 +27,7 @@ h2 {
   margin-bottom: 30px;
   border-top: 3px solid #6c757d; /* 上線 */
   border-bottom: 3px solid #6c757d; /* 下線 */
-  width: 70%; /* 線の長さ */
+  width: 90%; /* 線の長さ */
   margin-left: auto; /* 左右中央に配置 */
   margin-right: auto; /* 左右中央に配置 */
   text-transform: uppercase;
