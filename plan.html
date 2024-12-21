@@ -38,50 +38,54 @@
 
     <main>
       <section id="plan">
-        <h2>Plan / プラン</h2>
-        <p>01. Short Plan<br>所要時間：約30分<br>納品枚数：10枚〜<br>料金：£30</p>
+        <!-- 上部の画像を追加 -->
+        <div class="top-image">
+          <img src="https://github.com/snappy-londonphoto/snappy/blob/09edffe111efcf6c7f0fe891c0d22ed16f5d253f/bicycle2.jpg?raw=true" alt="Bicycle" />
+        </div>    
+        
+        <h2>Plan</h2>
+        <p>01. Short Plan<br>所要時間：約30分<br>納品枚数：10枚〜<br>料金：£30</p><Br>
         <p>02.Standard Plan<br>所要時間：約1時間<br>納品枚数：30枚〜<br>料金：£50</p>
       </section>
 
       <section id="genre">
-        <h2>Genre / ジャンル</h2>
-        <ul>
-          <li>ポートレート</li>
-          <li>ファミリーフォト</li>
-          <li>カップルフォト</li>
-          <li>旅行の記念写真</li>
-          <li>ペット写真</li>
-          <li>商品写真</li>
+        <h2>Genre</h2>
+        <p>ポートレート<Br>
+           ファミリーフォト<Br>
+           カップルフォト<Br>
+           旅行の記念写真<Br>
+           ペット写真<Br>
+           商品写真<Br> <p>
         </ul>
       </section>
 
       <section id="area">
-        <h2>Area / 撮影エリア</h2>
-        <p>ロンドン市内の観光地（ウェストミンスター周辺など）<br>ご自宅やお好きな場所</p>
+        <h2>Area</h2>
+        <p>ロンドン市内の観光地（ウェストミンスター周辺など）<br>ご自宅やお好きな場所<br>交通費をご負担いただけましたらイギリス国外、ヨーロッパ圏内の撮影も承ります。</p>
       </section>
 
       <section id="contact">
-        <h2>Contact / 連絡先</h2>
+        <h2>Contact</h2>
         <p>お気軽に<a href="mailto:snappy.filmphoto@gmail.com">snappy.filmphoto@gmail.com</a>までご連絡ください。</p>
       </section>
 
       <!-- 画像 -->
       <div class="bottom-image">
-        <img src="https://example.com/image.jpg" alt="Example Image">
+        <img src="https://github.com/snappy-londonphoto/snappy/blob/2b5ab3feeca98ec21e55ee7802cf7e6875142f63/london6set.PNG?raw=true" alt="London Photo Set" />
       </div>
     </main>
-  </div>
 
-  <script>
-    $(document).ready(function() {
-      const ham = $('#js-hamburger');
-      const nav = $('#js-nav');
-      
-      ham.on('click', function () {
-        ham.toggleClass('active');
-        nav.toggleClass('active');
+    <script>
+      $(document).ready(function() {
+        const ham = $('#js-hamburger');
+        const nav = $('#js-nav');
+        
+        ham.on('click', function () { //ハンバーガーメニューをクリックしたら
+          ham.toggleClass('active'); // ハンバーガーメニューにactiveクラスを付け外し
+          nav.toggleClass('active'); // ナビゲーションメニューにactiveクラスを付け外し
+        });
       });
-    });
-  </script>
+    </script>
+  </div>
 </body>
 </html>
