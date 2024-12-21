@@ -21,7 +21,7 @@ main {
 /* Aboutセクションの設定 */
 #about {
   padding: 50px 20px;
-  background-color: #f9f9f9; /* 背景色 */
+  background-color: white; /* 背景色 */
   text-align: center;
   width: 100%; /* 横幅を100%に */
   max-width: 100%; /* 最大幅も100%に */
