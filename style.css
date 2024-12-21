@@ -1,245 +1,31 @@
-/* 調整用スタイル */
-
-a {
-  text-decoration: none;
-}
-
-ul,
-li {
-  list-style: none;
-}
-
-
-main {
-  background-color: rgb(255, 255, 255);
-  display: flex;
-}
-
-.body-img {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 50px; /* 1列目と2列目の間のスペースを増やす */
-  grid-row-gap: 50px; /* 行間のスペース */
-  margin-top: 120px;/*画像全体を上下に位置調整*/
-  padding: 20px;/*画像全体が中央による*/
-}
-
-.body-img a {
-  display: flex;
-  align-items: center; /* 上下中央揃え */
-  justify-content: center; /* 左右中央揃え */
-}
-
-.body-img img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
-
-/* ヘッダー */
-.header {
-  background-color:rgb(255, 255, 255);
-  margin-top: -30px; /* header全体の高さ調整 */
-  width: 100%;/* 変えない */ 
-  height: 200px;/* ヘッダーmenuの帯幅調整 */
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-}
-
-.header__inner {
-  padding: 0px 10px 0px 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: inherit;
-  position: relative;
-}
-
-
-/* ヘッダーのロゴ部分 */
-.header__title {
-  padding-top:100px;/* Photolifeの高さ調整 */
-  padding-bottom: 120px;/* Photolifeの下幅調整 */
-  padding-left: 15px;
-}
-
-.header-title a {
-  color: rgb(81, 77, 77);
-  text-decoration: none;
-  font-family: 'Montserrat', sans-serif; /* Montserratフォントを適用 */
-  font-weight: 300; /* フォントのウェイトを調整（300は細めのウェイト） */
-  font-size: 25px;
-  }
-
-
-@media screen and (min-width: 1200px) {
-  .header__title {
-    width: 120px;
-  }
-}
-
-.header__title img {
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-/* ヘッダーのナビ部分 */
-
-.header__nav {/* ハンバーガーメニューの設定 */
-  position: absolute;
-  right: 0;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100vh;
-  transform: translateX(100%);
-  background-color:rgb(137, 132, 132);/* ハンバーガーメニューの内側色 */
-  transition: ease .4s;
-}
-
-
-@media screen and (min-width: 1200px) {
-  .header__nav {
-    position: static;
-    transform: initial;
-    background-color: inherit;
-    height: inherit;
-    display: flex;
-    justify-content: end;
-    width: 40%;/* PC版submenuの幅設定 */
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .nav__items {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    height: initial;
-    justify-content: space-between;
-  }
-}
-
-.nav-items {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+/* 基本の背景色と全体の設定 */
+body {
+  background-color: white; /* 背景を白に */
+  margin: 0;
   padding: 0;
 }
 
-@media screen and (min-width: 1200px) {
-  .nav-items {
-    position: inherit;
-    top: 0;
-    left: 0;
-    transform: translate(0, 0);
-
-  }
-}
-
-/* ナビ内のフォント調整 */
-.nav-items__item a {
-  color: rgb(232, 228, 228);
+.container {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  display: block;
-  text-align: center;
-  font-size: 30px;
-  margin-bottom: 24px;
 }
 
-.nav-items__item:last-child a {
-  margin-bottom: 0;
-}
-
-@media screen and (min-width: 1200px) {
-  .nav-items__item a {
-    margin-bottom: 0;
-  }
-}
-
-
-/* ハンバーガーメニュー */
-
-.header__hamburger {
-  width: 48px;
-  height: 100%;
-
-}
-
-.hamburger {
-  background-color: transparent;
-  border-color: transparent;
-  z-index: 9999;
-}
-
-@media screen and (min-width: 1200px) {
-  .hamburger {
-    display: none;
-  }
-}
-
-/* ハンバーガーメニューの線 */
-.hamburger span {
-  width: 100%;
-  height: 1px;
-  background-color: #000000da;/* ハンバーガーメニューの線色 */
-  position: relative;
-  transition: ease .4s;
-  display: block;
-}
-
-.hamburger span:nth-child(1) {
-  top: 0;
-}
-
-.hamburger span:nth-child(2) {
-  margin: 8px 0;
-}
-
-.hamburger span:nth-child(3) {
-  top: 0;
-}
-
-
-/* ハンバーガーメニュークリック後のスタイル */
-.header__nav.active {
-  transform: translateX(0);
-}
-
-.hamburger.active span:nth-child(1) {
-  top: 5px;
-  transform: rotate(45deg);
-}
-
-.hamburger.active span:nth-child(2) {
-  opacity: 0;
-
-}
-
-.hamburger.active span:nth-child(3) {
-  top: -13px;
-  transform: rotate(-45deg);
-}
-
-/*-------------------------------------------
-Main Section (About Me部分に隠れないようにするため)
--------------------------------------------*/
+/* メインセクションの設定 */
 main {
-  padding-top: 100px; /* ヘッダーとコンテンツの間に余白を追加 */
+  background-color: white; /* 背景色を白に */
+  width: 100%; /* 横幅をデバイスに合わせる */
+  padding-top: 100px; /* ヘッダーとの重なり防止 */
 }
 
-/*-------------------------------------------
-About Me Section
--------------------------------------------*/
+/* Aboutセクションの設定 */
 #about {
   padding: 50px 20px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* 背景色 */
   text-align: center;
+  width: 100%; /* 横幅を100%に */
+  max-width: 100%; /* 最大幅も100%に */
+  box-sizing: border-box; /* パディングが幅に含まれるように */
 }
 
 #about h2 {
@@ -247,18 +33,17 @@ About Me Section
   margin-bottom: 20px;
 }
 
-.about-text,
-.about-text-en {
+.about-text, .about-text-en {
   font-size: 1rem;
   color: #6c757d; /* グレー */
   line-height: 1.6;
   margin: 0 auto;
-  max-width: 800px;
+  max-width: 800px; /* 最大幅を800pxに制限 */
   text-align: center;
 }
 
 .about-text-en {
-  font-family: 'Lora', serif; /* 英語フォント */
+  font-family: 'Lora', serif; /* 英語用フォント */
   font-style: regular;
 }
 
@@ -266,15 +51,13 @@ About Me Section
   margin-bottom: 10px;
 }
 
-/*-------------------------------------------
-SP
--------------------------------------------*/
+/* SP対応 */
 @media screen and (max-width: 600px) {
   #about {
-    padding: 30px 10px;
+    padding: 30px 10px; /* パディングを調整 */
   }
 
   .about-text {
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* フォントサイズを調整 */
   }
 }
