@@ -3,8 +3,12 @@ body {
   background-color: white; /* 背景を白に */
   margin: 0;
   padding: 0;
+  font-family: 'Arial', sans-serif; /* About Meと同じフォント */
+  color: #333333; /* 本文の文字色 */
+  line-height: 1.6;
 }
 
+/* コンテナ */
 .container {
   margin: 0;
   padding: 0;
@@ -19,11 +23,11 @@ main {
   box-sizing: border-box; /* パディングが幅に含まれるように */
 }
 
-/* Planセクションの設定 */
+/* Planセクション */
 #plan {
   padding: 50px 20px;
   background-color: white; /* 背景色 */
-  text-align: center;
+  text-align: center; /* 本文を中央揃え */
   width: 100%; /* 横幅を100%に */
   max-width: 100%; /* 最大幅も100%に */
   box-sizing: border-box; /* パディングが幅に含まれるように */
@@ -31,37 +35,98 @@ main {
 
 #plan h2 {
   font-size: 2rem;
+  color: #000000; /* 見出しの色 */
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: #000000; /* 見出しの色 */
   margin-bottom: 20px;
 }
 
-.plan {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-.plan-item {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.plan-item h3 {
-  color: #007bff;
-}
-
 ul {
-  list-style: none;
+  list-style-type: disc;
+  margin: 20px 0 30px 20px;
   padding-left: 20px;
 }
 
 ul li {
-  font-size: 1rem;
-  margin-bottom: 8px;
+  font-size: 1.1rem; /* リストの文字サイズを大きめに */
+  margin-bottom: 12px;
+  color: #6c757d; /* グレー */
+  position: relative; /* 点線を引くために必要 */
 }
 
-#plan .plan-item br {
+/* リスト項目の上下に点線を引く */
+ul li::before, ul li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  border-top: 1px dotted #6c757d; /* 点線 */
+  margin: 0 auto;
+}
+
+ul li::before {
+  top: -8px; /* 上の点線の位置 */
+}
+
+ul li::after {
+  bottom: -8px; /* 下の点線の位置 */
+}
+
+/* Planのテキスト */
+.plan-content p {
+  font-size: 1.2rem; /* 本文の文字サイズを大きめに */
+  color: #333333; /* 本文の文字色 */
+  margin-bottom: 30px;
+  text-align: center; /* 本文を中央揃え */
+  line-height: 1.6; /* 行間を調整 */
+}
+
+/* 上部の画像 */
+.top-image {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.top-image img {
+  max-width: 90%;  /* 横幅を90%に制限 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 下部の画像 */
+.bottom-image {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.bottom-image img {
+  max-width: 90%;  /* 横幅を90%に制限 */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Aboutセクションのテキスト設定（共通のフォントと色） */
+.about-text, .about-text-en, .plan-content p {
+  font-size: 1rem;
+  color: #6c757d; /* グレー */
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 800px; /* 最大幅を800pxに制限 */
+  text-align: center; /* 本文を中央揃え */
+}
+
+.about-text-en {
+  font-family: 'Lora', serif; /* 英語用フォント */
+  font-style: regular;
+}
+
+#plan .about-text br {
   margin-bottom: 10px;
 }
 
@@ -73,22 +138,11 @@ SP
     padding: 30px 10px; /* パディングを調整 */
   }
 
-  .plan-item {
-    padding: 15px;
-  }
-
-  .plan {
-    grid-template-columns: 1fr;
-  }
-
-  #plan h2 {
-    font-size: 1.8rem;
-  }
-
-  ul li {
+  .about-text {
     font-size: 0.9rem; /* フォントサイズを調整 */
   }
 }
+
 
 /* 上部の画像 */
 .top-image {
